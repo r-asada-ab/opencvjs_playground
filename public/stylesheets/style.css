@@ -1,8 +1,40 @@
+html {
+  height: 100%;
+}
+
 body {
-  padding: 50px;
+  padding: 40px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
 }
 
 a {
   color: #00B7FF;
+}
+
+#title {
+  margin-bottom: 20px;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 12px;
+  height: 100%;
+}
+
+#editor {
+  border-top: whitesmoke 2px solid;
+  border-right: whitesmoke 2px solid;
+  border-left: whitesmoke 2px solid;
+  border-bottom: whitesmoke 2px solid;
+  flex: 1;
+}
+
+#canvas_area {
+  border-top: whitesmoke 2px solid;
+  border-right: whitesmoke 2px solid;
+  border-bottom: whitesmoke 2px solid;
+  flex: 1;
 }
