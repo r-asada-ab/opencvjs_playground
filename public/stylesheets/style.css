@@ -38,3 +38,13 @@ a {
   border-bottom: whitesmoke 2px solid;
   flex: 1;
 }
+
+#drop_area {
+  background-color: #e7e7e7;
+  border:dashed 1px lightslategray;
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-bottom: 12px;
+  font-size: small;
+}

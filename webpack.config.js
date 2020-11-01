@@ -1,3 +1,4 @@
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -14,11 +15,22 @@ module.exports = {
           test: /\.ts$/,
           use: 'ts-loader',
         },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader']
+        },
+        {
+          test: /\.ttf$/,
+          use: ['file-loader']
+        }
       ],
     },
     resolve: {
       extensions: [
         '.ts', '.js',
       ],
-    }
+    },
+    plugins: [
+      new MonacoWebpackPlugin()
+    ],
 };
