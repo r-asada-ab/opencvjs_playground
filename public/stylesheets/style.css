@@ -37,6 +37,7 @@ a {
   border-right: whitesmoke 2px solid;
   border-bottom: whitesmoke 2px solid;
   flex: 1;
+  text-align: center;
 }
 
 #drop_area {
@@ -47,4 +48,10 @@ a {
   margin-right: 12px;
   padding-bottom: 12px;
   font-size: small;
+}
+
+#preview {
+  width: 600px;
+  height: 400px;
+  margin: 10px;
 }

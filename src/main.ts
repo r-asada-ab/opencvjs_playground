@@ -13,6 +13,9 @@ function main() {
     event.preventDefault()
     const file = event!!.dataTransfer!!.files[0]
     let url = URL.createObjectURL(file)
+
+    let image = <HTMLImageElement>document.getElementById("preview")
+    image.src = url
   })
 
   // エディター
