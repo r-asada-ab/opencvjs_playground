@@ -1,8 +1,71 @@
+html {
+  height: 100%;
+}
+
 body {
-  padding: 50px;
+  padding: 40px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
 }
 
 a {
   color: #00B7FF;
+}
+
+#title {
+  margin-bottom: 20px;
+}
+
+#controller {
+  margin-right: 3px;
+}
+
+#run_button {
+  background-color: white;
+  border: none;
+}
+
+#run_button_img {
+  width: 36px;
+  height: 36px;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 12px;
+  height: 100%;
+}
+
+#editor {
+  border-top: whitesmoke 2px solid;
+  border-right: whitesmoke 2px solid;
+  border-left: whitesmoke 2px solid;
+  border-bottom: whitesmoke 2px solid;
+  flex: 1;
+}
+
+#canvas_area {
+  border-top: whitesmoke 2px solid;
+  border-right: whitesmoke 2px solid;
+  border-bottom: whitesmoke 2px solid;
+  flex: 1;
+  text-align: center;
+}
+
+#drop_area {
+  background-color: #e7e7e7;
+  border:dashed 1px lightslategray;
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  padding-bottom: 12px;
+  font-size: small;
+}
+
+#preview {
+  width: 600px;
+  height: 400px;
+  margin: 10px;
 }
