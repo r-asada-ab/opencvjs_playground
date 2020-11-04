@@ -20,12 +20,25 @@ function main() {
 
   // エディター
   var monacoEditorContainer = document.getElementById("editor");
+  let editor: monaco.editor.IStandaloneCodeEditor
   if (monacoEditorContainer) {
-      monaco.editor.create(monacoEditorContainer, {
+      editor = monaco.editor.create(monacoEditorContainer, {
           value: 'console.log("Hello, world")',
           language: 'javascript'
       });
   }
+
+  // 実行ボタン
+  let runButton = document.getElementById("run_button")
+  runButton.addEventListener("click", async () => {
+    var cv = require("./opencv.js");
+
+    let v = editor.getValue()
+    console.log(v)
+    let func = new Function("cv", v)
+    console.log(func)
+    func(cv)
+  })
 }
 
 main()

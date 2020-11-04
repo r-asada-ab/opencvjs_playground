@@ -16,6 +16,20 @@ a {
   margin-bottom: 20px;
 }
 
+#controller {
+  margin-right: 3px;
+}
+
+#run_button {
+  background-color: white;
+  border: none;
+}
+
+#run_button_img {
+  width: 36px;
+  height: 36px;
+}
+
 #container {
   display: flex;
   flex-direction: row;

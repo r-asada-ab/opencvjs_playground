@@ -33,4 +33,11 @@ module.exports = {
     plugins: [
       new MonacoWebpackPlugin()
     ],
+    resolve: {
+      fallback: {
+        crypto: false, 
+        fs: false,
+        path: false
+      }
+    }
 };
