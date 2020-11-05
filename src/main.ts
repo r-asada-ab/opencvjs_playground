@@ -24,6 +24,7 @@ function main() {
   var monacoEditorContainer = document.getElementById("editor");
   let editor: monaco.editor.IStandaloneCodeEditor
   if (monacoEditorContainer) {
+      monaco.editor.setTheme("vs-dark")
       editor = monaco.editor.create(monacoEditorContainer, {
           value: 'console.log("Hello, world")',
           language: 'javascript'
