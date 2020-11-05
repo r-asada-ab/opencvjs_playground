@@ -1,4 +1,6 @@
 import * as monaco from "monaco-editor"
+const cv = require("./opencv.js");
+console.log(cv)
 
 function main() {
   // ドロップエリア
@@ -31,8 +33,6 @@ function main() {
   // 実行ボタン
   let runButton = document.getElementById("run_button")
   runButton.addEventListener("click", async () => {
-    var cv = require("./opencv.js");
-
     let v = editor.getValue()
     console.log(v)
     let func = new Function("cv", v)
