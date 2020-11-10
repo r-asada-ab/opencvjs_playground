@@ -17,6 +17,7 @@
   <body>
 
     <div id="contents">
+
       <!-- ヘッダー -->
       <div id="header">
         <div id="title">
@@ -47,6 +48,23 @@
             <img id="preview"></img>
             <canvas id="outputCanvas"></canvas>
         </div>
+      </div>
+    </div>
+
+    <!-- モーダルウィンドウ -->
+    <div id="save_modal" class="save_modal">
+      <div class="modal_content">
+        <div class="modal_body">
+          <div class="modal_subtitle">Title</div>
+          <input class="modal_input" id="title_textbox" type="text"/>
+          <div  class="modal_subtitle">Dipscription</div>
+          <input class="modal_input" id="discription_textbox" type="text"/>
+
+          <div class="modal_button_container">
+            <input type="button" class="modal_button" id="register_button" value="register">
+            <input type="button"class="modal_button" id="cancel_button" value="cancel">
+          </div>
+      </div>
       </div>
     </div>
 

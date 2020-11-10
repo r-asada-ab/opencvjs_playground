@@ -42,9 +42,24 @@ function main() {
   })
 
   // コード検索ボタン
-  let discoverButton = document.getElementById("discover_button_img")
+  let discoverButton = document.getElementById("discover_button")
   discoverButton.addEventListener("click", () => {
     window.location.href = "../discover.html"
+  })
+
+  // 保存ボタン
+  let saveButton = document.getElementById("save_button")
+  saveButton.addEventListener("click", () => {
+    var modal = document.getElementById('save_modal');
+    modal.style.display = 'block';
+
+  })
+
+  var cancelButton = document.getElementById('cancel_button');
+
+  cancelButton.addEventListener('click', function() {
+    var modal = document.getElementById('save_modal');
+    modal.style.display = 'none';
   })
 }
 
