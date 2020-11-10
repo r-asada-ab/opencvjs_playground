@@ -1,12 +1,10 @@
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
-module.exports = {
+var main = {
     mode: 'development',
     entry: './src/main.ts',
     output: {
-        //  出力ファイルのディレクトリ名
         path: `${__dirname}/public/javascripts`,
-        // 出力ファイル名
         filename: "main.js"
     },
     module: {
@@ -41,3 +39,5 @@ module.exports = {
       }
     }
 };
+
+module.exports = [main];
