@@ -15,6 +15,7 @@
     "http-errors": "~1.6.3",
     "monaco-editor": "^0.21.2",
     "monaco-editor-webpack-plugin": "^2.0.0",
+    "mongoose": "^5.10.13",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11",
     "style-loader": "^2.0.0"
