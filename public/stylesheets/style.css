@@ -54,6 +54,28 @@ a {
   height: 36px;
 }
 
+#discover_button {
+  padding-top: 10px;
+  background-color: #FFC107;
+  border: none;
+}
+
+#discover_button_img {
+  width: 36px;
+  height: 36px;
+}
+
+
+#save_button {
+  padding-top: 10px;
+  background-color: #FFC107;
+  border: none;
+}
+
+#save_button_img {
+  width: 36px;
+  height: 36px;
+}
 
 #container {
   display: flex;

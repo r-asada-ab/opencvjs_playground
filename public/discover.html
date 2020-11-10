@@ -2,7 +2,7 @@
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>OpenCV.js Playground</title>
-    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="stylesheet" href="./stylesheets/discover_style.css">
 
     <!-- BootStrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -23,58 +23,13 @@
           <h5 id="title_text">OpenCV.js Playground</h5>
           <div id="title_version">1.0.1</div>
         </div>
-
-        <div id="controller">
-          <button id="run_button">
-            <img src="./images/ic_play.png" id="run_button_img">
-          </button>
-          <button id="discover_button">
-            <img src="./images/ic_discover.png" id="discover_button_img">
-          </button>
-          <button id="save_button">
-            <img src="./images/ic_save.png" id="save_button_img">
-          </button>
-        </div>
       </div>
 
+      <!-- コンテンツコンテナ -->
       <div id="container">
-        <div id="editor"></div>
-        <div id="canvas_area">
-            <div id="drop_area">
-                <p class="caption" id="video_caption">Drop Image</p>
-            </div>
-
-            <img id="preview"></img>
-            <canvas id="outputCanvas"></canvas>
-        </div>
+        <div id="container_title">Search Playground</div>
       </div>
+
     </div>
-
-    <script>
-
-      tippy('#run_button', {
-        content: 'Run',
-      });
-
-      tippy('#discover_button', {
-        content: 'Discover',
-      });
-
-      tippy('#save_button', {
-        content: 'Save',
-      });
-
-
-      tippy('#preview', {
-        content: 'Id: preview',
-      });
-
-      tippy('#outputCanvas', {
-        content: 'Id: outputCanvas',
-      });
-
-    </script>
-
-    <script src="./javascripts/main.js"></script>
   </body>
 </html>
