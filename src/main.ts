@@ -40,6 +40,12 @@ function main() {
     console.log(func)
     func(cv)
   })
+
+  // コード検索ボタン
+  let discoverButton = document.getElementById("discover_button_img")
+  discoverButton.addEventListener("click", () => {
+    window.location.href = "../discover.html"
+  })
 }
 
 main()
