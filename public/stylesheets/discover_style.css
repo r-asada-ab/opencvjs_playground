@@ -45,10 +45,18 @@ html {
   
   #container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex: 1;
+    text-align: center;
   }
 
 #container_title {
-    font-size: larger;
+    font-size: xx-large;
+    font-weight: bold;
+    margin: 10px;
+}
+
+#textbox {
+  height: 36px;
+  width: 300px;
 }
