@@ -5,7 +5,6 @@ console.log(cv)
 function main() {
   // ドロップエリア
   let dropArea = document.getElementById("drop_area")
-
   dropArea!!.addEventListener('dragover', (event: DragEvent) => {
     event.preventDefault();
   })
@@ -55,9 +54,33 @@ function main() {
 
   })
 
+  // キャンセルボタン
   var cancelButton = document.getElementById('cancel_button');
-
   cancelButton.addEventListener('click', function() {
+    var modal = document.getElementById('save_modal');
+    modal.style.display = 'none';
+  })
+
+  // 登録ボタン
+  var registerButton = document.getElementById("register_button")
+  registerButton.addEventListener("click", () => {
+    let titleBox = <HTMLTextAreaElement>document.getElementById("title_textbox")
+    let discriptionBox = <HTMLTextAreaElement>document.getElementById("discription_textbox")
+    let editorText = editor.getValue()
+
+    const data = {
+      title: titleBox.value,
+      discription: discriptionBox.value,
+      snipet: editorText
+    };
+
+    let body = JSON.stringify(data);
+
+    fetch('./api/register', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body })
+
     var modal = document.getElementById('save_modal');
     modal.style.display = 'none';
   })
