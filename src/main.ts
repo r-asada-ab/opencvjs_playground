@@ -84,6 +84,26 @@ function main() {
     var modal = document.getElementById('save_modal');
     modal.style.display = 'none';
   })
+
+  // クエリが存在するとき
+  var query = location.search
+  if (query.length > 0) {
+    var value = query.split('=')
+    let id = decodeURIComponent(value[1])
+    const data = { query: id }
+    let body = JSON.stringify(data)
+    let promise = fetch('./api/findbyid', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body })
+
+    promise.then(async (resolve) => {
+      let body = await resolve.json()
+      console.log(body)
+      let b = body[0]
+      editor.setValue(b.snipet)
+    })
+  }
 }
 
 main()

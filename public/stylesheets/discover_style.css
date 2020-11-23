@@ -60,3 +60,7 @@ html {
   height: 36px;
   width: 300px;
 }
+
+#playground_table {
+  margin-top: 10px;
+}

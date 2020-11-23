@@ -40,4 +40,26 @@ var main = {
     }
 };
 
-module.exports = [main];
+var discover = {
+  mode: 'development',
+  entry: './src/discover.ts',
+  output: {
+      path: `${__dirname}/public/javascripts`,
+      filename: "discover.js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+      }
+    ]
+  },
+  resolve: {
+    extensions: [
+      '.ts', '.js',
+    ],
+  }
+};
+
+module.exports = [main, discover];

@@ -7,7 +7,9 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 var usersRouter = require('./routes/users');
-var snipetsRouter = require('./routes/snipets');
+var registerRouter = require('./routes/api/register');
+var findRouter = require('./routes/api/find');
+var findByIdRouter = require('./routes/api/findbyid');
 
 var app = express();
 
@@ -29,7 +31,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
-app.use('/api/register', snipetsRouter)
+app.use('/api/register', registerRouter)
+app.use('/api/find', findRouter)
+app.use('/api/findbyid', findByIdRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
