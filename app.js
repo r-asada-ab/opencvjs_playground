@@ -11,14 +11,22 @@ var registerRouter = require('./routes/api/register');
 var findRouter = require('./routes/api/find');
 var findByIdRouter = require('./routes/api/findbyid');
 
+require('dotenv').config()
+
 var app = express();
 
 // db
-var mongoDB = 'mongodb://127.0.0.1:27017/app_db'
-mongoose.connect(mongoDB)
-mongoose.Promise = global.Promise
-var db = mongoose.connection
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+mongoose.connect("mongodb://"+process.env.COSMOSDB_HOST+":"+process.env.COSMOSDB_PORT+"/"+process.env.COSMOSDB_DBNAME+"?ssl=true&replicaSet=globaldb", {
+  auth: {
+    user: process.env.COSMOSDB_USER,
+    password: process.env.COSMOSDB_PASSWORD
+  },
+useNewUrlParser: true,
+useUnifiedTopology: true,
+retryWrites: false
+})
+.then(() => console.log('Connection to CosmosDB successful'))
+.catch((err) => console.error(err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
