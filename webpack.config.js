@@ -1,12 +1,10 @@
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
-module.exports = {
+var main = {
     mode: 'development',
     entry: './src/main.ts',
     output: {
-        //  出力ファイルのディレクトリ名
         path: `${__dirname}/public/javascripts`,
-        // 出力ファイル名
         filename: "main.js"
     },
     module: {
@@ -41,3 +39,27 @@ module.exports = {
       }
     }
 };
+
+var discover = {
+  mode: 'development',
+  entry: './src/discover.ts',
+  output: {
+      path: `${__dirname}/public/javascripts`,
+      filename: "discover.js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
+      }
+    ]
+  },
+  resolve: {
+    extensions: [
+      '.ts', '.js',
+    ],
+  }
+};
+
+module.exports = [main, discover];

@@ -47,6 +47,7 @@ a {
   padding-top: 10px;
   background-color: #FFC107;
   border: none;
+  outline: none
 }
 
 #run_button_img {
@@ -54,6 +55,30 @@ a {
   height: 36px;
 }
 
+#discover_button {
+  padding-top: 10px;
+  background-color: #FFC107;
+  border: none;
+  outline: none
+}
+
+#discover_button_img {
+  width: 36px;
+  height: 36px;
+}
+
+
+#save_button {
+  padding-top: 10px;
+  background-color: #FFC107;
+  border: none;
+  outline: none
+}
+
+#save_button_img {
+  width: 36px;
+  height: 36px;
+}
 
 #container {
   display: flex;
@@ -91,4 +116,50 @@ a {
   width: 600px;
   height: 400px;
   margin: 10px;
+}
+
+.save_modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.5);
+}
+  
+.modal_content{
+  background-color: white;
+  width: 500px;
+  margin: 20% auto;
+}
+
+.modal_body {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.modal_subtitle {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.modal_button {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.modal_input {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.modal_button_container {
+  text-align: center;
 }

@@ -17,16 +17,23 @@
   <body>
 
     <div id="contents">
+
       <!-- ヘッダー -->
       <div id="header">
         <div id="title">
           <h5 id="title_text">OpenCV.js Playground</h5>
-          <div id="title_version">1.0.1</div>
+          <div id="title_version">1.1.1</div>
         </div>
 
         <div id="controller">
           <button id="run_button">
             <img src="./images/ic_play.png" id="run_button_img">
+          </button>
+          <button id="discover_button">
+            <img src="./images/ic_discover.png" id="discover_button_img">
+          </button>
+          <button id="save_button">
+            <img src="./images/ic_save.png" id="save_button_img">
           </button>
         </div>
       </div>
@@ -44,7 +51,38 @@
       </div>
     </div>
 
+    <!-- モーダルウィンドウ -->
+    <div id="save_modal" class="save_modal">
+      <div class="modal_content">
+        <div class="modal_body">
+          <div class="modal_subtitle">Title</div>
+          <input class="modal_input" id="title_textbox" type="text"/>
+          <div  class="modal_subtitle">Dipscription</div>
+          <input class="modal_input" id="discription_textbox" type="text"/>
+
+          <div class="modal_button_container">
+            <input type="button" class="modal_button" id="register_button" value="register">
+            <input type="button"class="modal_button" id="cancel_button" value="cancel">
+          </div>
+      </div>
+      </div>
+    </div>
+
     <script>
+
+      tippy('#run_button', {
+        content: 'Run',
+      });
+
+      tippy('#discover_button', {
+        content: 'Discover',
+      });
+
+      tippy('#save_button', {
+        content: 'Save',
+      });
+
+
       tippy('#preview', {
         content: 'Id: preview',
       });
