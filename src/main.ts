@@ -1,6 +1,7 @@
 import * as monaco from "monaco-editor"
 const cv = require("./opencv.js");
 console.log(cv)
+console.log(process.env.NODE_ENV)
 
 function main() {
   // ドロップエリア
