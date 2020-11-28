@@ -1,4 +1,10 @@
 function main() {
+
+    let title = document.getElementById("title_text")
+    title.addEventListener("click", () => {
+        location.href = "index.html"
+    })
+
     let searchButton = document.getElementById("search_button")
     searchButton.addEventListener("click", () => {
         let searchBox = <HTMLInputElement>document.getElementById("textbox")
