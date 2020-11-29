@@ -118,6 +118,7 @@ a {
   margin: 10px;
 }
 
+/* 保存モーダル */
 .save_modal {
   display: none;
   position: fixed;
@@ -162,4 +163,27 @@ a {
 
 .modal_button_container {
   text-align: center;
+}
+
+/* 通知モーダル */
+.notification_modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  right: 3%;
+  bottom: 3%;
+  height: 65px;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 3%;
+  background-color:#21bf73;
+  color: white;
+  font-size: large;
+  line-height: 65px;
+  padding-left: 10px;
+}
+
+#success_button_img {
+  width: 32px;
+  height: 32px;
 }

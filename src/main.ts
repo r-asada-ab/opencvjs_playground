@@ -1,7 +1,5 @@
 import * as monaco from "monaco-editor"
-const cv = require("./opencv.js");
-console.log(cv)
-console.log(process.env.NODE_ENV)
+const cv = require("./opencv.js")
 
 function main() {
   // ドロップエリア
@@ -52,7 +50,6 @@ function main() {
   saveButton.addEventListener("click", () => {
     var modal = document.getElementById('save_modal');
     modal.style.display = 'block';
-
   })
 
   // キャンセルボタン
@@ -77,13 +74,23 @@ function main() {
 
     let body = JSON.stringify(data);
 
-    fetch('./api/register', {
+    let promise = fetch('./api/register', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body })
 
     var modal = document.getElementById('save_modal');
     modal.style.display = 'none';
+
+    promise.then(() => {
+        // 保存が完了したとき
+        var nModal = document.getElementById('notification_modal')
+        nModal.style.display = 'block'
+
+        nModal.onclick = () => {
+          nModal.style.display = 'none'
+        }
+    })
   })
 
   // クエリが存在するとき
