@@ -45,6 +45,10 @@ function main() {
         location.href = "index.html"
     })
 
+    title.addEventListener("mouseover", () => {
+        title.style.cursor = "pointer"
+    })
+
     // 検索ボタンを押したとき
     let searchButton = document.getElementById("search_button")
     searchButton.addEventListener("click", () => {
