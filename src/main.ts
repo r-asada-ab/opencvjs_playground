@@ -25,7 +25,8 @@ function main() {
       monaco.editor.setTheme("vs-dark")
       editor = monaco.editor.create(monacoEditorContainer, {
           value: 'console.log("Hello, world")',
-          language: 'javascript'
+          language: 'javascript',
+          automaticLayout: true
       });
   }
 
