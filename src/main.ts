@@ -2,6 +2,19 @@ import * as monaco from "monaco-editor"
 const cv = require("./opencv.js")
 
 function main() {
+
+    // タイトル
+    let title = document.getElementById("title_text")
+    title.addEventListener("mouseover", () => {
+        title.style.cursor = "default"
+    })
+
+    // バージョン
+    let version = document.getElementById("title_version")
+    version.addEventListener("mouseover", () => {
+        version.style.cursor = "default"
+    })
+
   // ドロップエリア
   let dropArea = document.getElementById("drop_area")
   dropArea!!.addEventListener('dragover', (event: DragEvent) => {
@@ -25,7 +38,8 @@ function main() {
       monaco.editor.setTheme("vs-dark")
       editor = monaco.editor.create(monacoEditorContainer, {
           value: 'console.log("Hello, world")',
-          language: 'javascript'
+          language: 'javascript',
+          automaticLayout: true
       });
   }
 

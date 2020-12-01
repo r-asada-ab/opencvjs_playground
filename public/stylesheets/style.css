@@ -91,13 +91,16 @@ a {
   border-right: whitesmoke 2px solid;
   border-left: whitesmoke 2px solid;
   border-bottom: whitesmoke 2px solid;
-  flex: 1;
+  min-width: 620px;
+  resize: horizontal;
+  overflow: hidden;
 }
 
 #canvas_area {
   border-top: whitesmoke 2px solid;
   border-right: whitesmoke 2px solid;
   border-bottom: whitesmoke 2px solid;
+  min-width: 620px;
   flex: 1;
   text-align: center;
 }
