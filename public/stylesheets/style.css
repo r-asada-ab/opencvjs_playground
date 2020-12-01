@@ -119,6 +119,9 @@ a {
   width: 600px;
   height: 400px;
   margin: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* 保存モーダル */
