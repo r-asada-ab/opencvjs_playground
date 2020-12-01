@@ -41,6 +41,8 @@ a {
 
 #controller {
   flex: 1;
+  text-align: right;
+  margin-right: 30px;
 }
 
 #run_button {
@@ -76,6 +78,18 @@ a {
 }
 
 #save_button_img {
+  width: 36px;
+  height: 36px;
+}
+
+#documentation_button {
+  padding-top: 10px;
+  background-color: #FFC107;
+  border: none;
+  outline: none
+}
+
+#documentation_button_img {
   width: 36px;
   height: 36px;
 }
