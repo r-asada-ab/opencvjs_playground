@@ -1,0 +1,107 @@
+html {
+    height: 100%;
+}
+  
+body {
+    margin: 0px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    height: 100%;
+}
+  
+a {
+    color: #00B7FF;
+}
+  
+#contents {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+  
+#header {
+    background-color: #FFC107;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+  
+#title {
+    flex: 1;
+    padding-left: 18px;
+    padding-top: 12px;
+    display: flex;
+    flex-direction: row;
+}
+  
+#title_version {
+    margin-top: 2px;
+    margin-left: 12px;
+}
+  
+#controller {
+    flex: 1;
+}
+  
+#container {
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+}
+
+/* ドキュメント全体 */
+.document {
+    width: 70%;
+    height: 100%;
+    margin: 10px auto;
+    border-top: lightgray 1px solid;
+    border-right: lightgray 1px solid;
+    border-left: lightgray 1px solid;
+    border-bottom: lightgray 1px solid;
+}
+
+.document_title_header {
+    font-size: x-large;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border-bottom: #28abb9 1px solid;
+}
+
+.document_section {
+    margin-top: 25px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.document_section_title {
+    background-color: skyblue;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 3px 3px 0 0;
+    color: white;
+}
+
+.document_section_contents {
+    border-right: whitesmoke 1px solid;
+    border-left: whitesmoke 1px solid;
+    border-bottom: whitesmoke 1px solid;
+}
+
+.document_section_enum {
+    text-align: left;
+    margin: 10px;
+}
+
+.document_section_links {
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
