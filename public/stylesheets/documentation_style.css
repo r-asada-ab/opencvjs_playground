@@ -49,15 +49,15 @@ a {
     text-align: center;
 }
 
-/* ドキュメント */
+/* ドキュメント全体 */
 .document {
-    width: 75%;
+    width: 70%;
     height: 100%;
     margin: 10px auto;
-    border-top: whitesmoke 1px solid;
-    border-right: whitesmoke 1px solid;
-    border-left: whitesmoke 1px solid;
-    border-bottom: whitesmoke 1px solid;
+    border-top: lightgray 1px solid;
+    border-right: lightgray 1px solid;
+    border-left: lightgray 1px solid;
+    border-bottom: lightgray 1px solid;
 }
 
 .document_title_header {
@@ -67,4 +67,41 @@ a {
     margin-right: 10px;
     margin-top: 10px;
     border-bottom: #28abb9 1px solid;
+}
+
+.document_section {
+    margin-top: 25px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.document_section_title {
+    background-color: skyblue;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 3px 3px 0 0;
+    color: white;
+}
+
+.document_section_contents {
+    border-right: whitesmoke 1px solid;
+    border-left: whitesmoke 1px solid;
+    border-bottom: whitesmoke 1px solid;
+}
+
+.document_section_enum {
+    text-align: left;
+    margin: 10px;
+}
+
+.document_section_links {
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
