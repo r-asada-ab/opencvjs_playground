@@ -126,6 +126,11 @@ function main() {
       editor.setValue(b.snipet)
     })
   }
+
+  let documentButton = document.getElementById("documentation_button")
+  documentButton.addEventListener("click", () => {
+    window.location.href = "../documentation.html"
+  })
 }
 
 main()
