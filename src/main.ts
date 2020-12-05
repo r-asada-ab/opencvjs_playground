@@ -1,5 +1,6 @@
 import * as monaco from "monaco-editor"
 const cv = require("./opencv.js")
+console.log(cv)
 
 function main() {
 
