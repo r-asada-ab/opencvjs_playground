@@ -19,6 +19,26 @@ function changeCanvas(mode: CanvasMode) {
     }
 }
 
+// ドロップを有効にする
+function enableDrop(imgElemntId: string) {
+    let image = <HTMLImageElement>document.getElementById(imgElemntId)
+    if (image == null) {
+        return
+    }
+
+    image.addEventListener('dragover', (event: DragEvent) => {
+      event.preventDefault();
+    })
+
+    image.addEventListener('drop', (event: DragEvent) => {
+      event.stopPropagation()
+      event.preventDefault()
+      const file = event!!.dataTransfer!!.files[0]
+      let url = URL.createObjectURL(file)
+      image.src = url
+    })
+}
+
 function main() {
 
     // タイトル
@@ -53,20 +73,9 @@ function main() {
     })
 
     // ドロップエリア
-    let dropArea = document.getElementById("drop_area")
-    dropArea!!.addEventListener('dragover', (event: DragEvent) => {
-      event.preventDefault();
-    })
-
-  dropArea!!.addEventListener('drop', (event: DragEvent) => {
-    event.stopPropagation()
-    event.preventDefault()
-    const file = event!!.dataTransfer!!.files[0]
-    let url = URL.createObjectURL(file)
-
-    let image = <HTMLImageElement>document.getElementById("preview")
-    image.src = url
-  })
+    enableDrop("preview")
+    enableDrop("preview_left")
+    enableDrop("preview_right")
 
   // エディター
   var monacoEditorContainer = document.getElementById("editor");

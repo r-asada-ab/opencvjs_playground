@@ -134,14 +134,16 @@ a {
   margin-bottom: 5px;
 }
 
-#drop_area {
+.drop_area {
   background-color: #e7e7e7;
-  border:dashed 1px lightslategray;
   margin-top: 12px;
   margin-left: 12px;
   margin-right: 12px;
-  padding-bottom: 12px;
   font-size: small;
+}
+
+.preview_area {
+  display: flex;
 }
 
 #preview {
@@ -149,6 +151,32 @@ a {
   height: 400px;
   margin: 10px;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.preview_area_left {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.preview_area_right {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+#preview_left {
+  width: 300px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#preview_right {
+  width: 300px;
+  height: 200px;
   margin-left: auto;
   margin-right: auto;
 }
