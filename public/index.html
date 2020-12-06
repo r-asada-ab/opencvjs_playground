@@ -50,7 +50,7 @@
 
             <!-- 画面の切り替え -->
             <div class="canvas_area_header">
-              <div class="canvas_area_header_item" id="canvas_area_header_item_single">Singme Image</div>
+              <div class="canvas_area_header_item" id="canvas_area_header_item_single">Single Image</div>
               <div class="canvas_area_header_item" id="canvas_area_header_item_double">Double Images</div>
             </div>
 
@@ -59,7 +59,7 @@
               <div class="preview_area">
                 <img class="drop_area" id="preview"></img>
               </div>
-              <canvas id="outputCanvas"></canvas>
+              <canvas id="output_canvas"></canvas>
             </div>
 
 
@@ -73,7 +73,7 @@
                   <img class="drop_area" id="preview_right"></img>
                 </div>
               </div>
-              <canvas id="outputCanvas"></canvas>
+              <canvas id="output_canvas_double"></canvas>
             </div>
       </div>
     </div>
@@ -126,8 +126,20 @@
         content: 'Id: preview',
       });
 
-      tippy('#outputCanvas', {
-        content: 'Id: outputCanvas',
+      tippy('#preview_left', {
+        content: 'Id: preview_left',
+      });
+
+      tippy('#preview_right', {
+        content: 'Id: preview_right',
+      });
+
+      tippy('#output_canvas', {
+        content: 'Id: output_canvas',
+      });
+
+      tippy('#output_canvas_double', {
+        content: 'Id: output_canvas_double',
       });
 
       tippy('#canvas_area_header_item_single', {

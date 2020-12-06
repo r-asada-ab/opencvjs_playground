@@ -42,12 +42,13 @@ function enableDrop(imgElemntId: string) {
       const file = event!!.dataTransfer!!.files[0]
       let url = URL.createObjectURL(file)
       image.src = url
-      image.style.width = "auto"
+      image.style.width = "auto" // アスペクト比を維持するように設定
     })
 }
 
 function main() {
 
+    // 初期化する
     changeCanvas(CanvasMode.Single)
 
     // タイトル
@@ -101,11 +102,9 @@ function main() {
   // 実行ボタン
   let runButton = document.getElementById("run_button")
   runButton.addEventListener("click", async () => {
-    let v = editor.getValue()
-    console.log(v)
-    let func = new Function("cv", v)
-    console.log(func)
-    func(cv)
+      let v = editor.getValue()
+      let func = new Function("cv", v)
+      func(cv)
   })
 
   // コード検索ボタン
