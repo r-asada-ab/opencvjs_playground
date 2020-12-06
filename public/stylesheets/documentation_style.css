@@ -23,13 +23,13 @@ a {
     color: white;
     display: flex;
     flex-direction: row;
-    height: 50px;
+    height: 45px;
 }
   
 #title {
     flex: 1;
     padding-left: 18px;
-    padding-top: 12px;
+    padding-top: 8px;
     display: flex;
     flex-direction: row;
 }
