@@ -110,6 +110,7 @@ a {
   overflow: hidden;
 }
 
+/* キャンバス領域 */
 #canvas_area {
   border-top: whitesmoke 2px solid;
   border-right: whitesmoke 2px solid;
@@ -117,6 +118,20 @@ a {
   min-width: 620px;
   flex: 1;
   text-align: center;
+}
+
+.canvas_area_header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: lightgray 1px solid;
+}
+
+.canvas_area_header_item {
+  font-size: smaller;
+  color: #00B7FF;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 #drop_area {

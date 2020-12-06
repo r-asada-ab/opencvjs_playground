@@ -47,13 +47,32 @@
 
         <!-- 出力画面 -->
         <div id="canvas_area">
-            <div id="drop_area">
-                <p class="caption" id="video_caption">Drop Image</p>
+
+            <!-- 画面の切り替え -->
+            <div class="canvas_area_header">
+              <div class="canvas_area_header_item" id="canvas_area_header_item_single">Singme Image</div>
+              <div class="canvas_area_header_item" id="canvas_area_header_item_double">Double Images</div>
             </div>
 
-            <img id="preview"></img>
-            <canvas id="outputCanvas"></canvas>
-        </div>
+            <!-- 1枚数を確認するための領域 -->
+            <div class="canvas_area_single" id="canvas_area_single">
+              <div id="drop_area">
+                <p class="caption" id="video_caption">Drop Image</p>
+              </div>
+              <img id="preview"></img>
+              <canvas id="outputCanvas"></canvas>
+            </div>
+
+
+            <!-- 2枚の画像を確認するための領域 -->
+            <div class="canvas_area_double" id="canvas_area_double" hidden>
+              <div id="drop_area">
+                <p class="caption" id="video_caption">Drop Images</p>
+              </div>
+              <img id="preview_left"></img>
+              <img id="preview_right"></img>
+              <canvas id="outputCanvas"></canvas>
+            </div>
       </div>
     </div>
 
@@ -108,6 +127,14 @@
       tippy('#outputCanvas', {
         content: 'Id: outputCanvas',
       });
+
+      tippy('#canvas_area_header_item_single', {
+        content: "Click when processing a image"
+      })
+
+      tippy('#canvas_area_header_item_double', {
+        content: "Click when processing two images"
+      })
 
     </script>
 

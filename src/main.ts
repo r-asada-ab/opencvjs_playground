@@ -1,6 +1,23 @@
 import * as monaco from "monaco-editor"
+import { CanvasMode } from "./main/CanvasMode"
 const cv = require("./opencv.js")
-console.log(cv)
+
+// キャンバスを切り替える
+function changeCanvas(mode: CanvasMode) {
+    let singleCanvas = document.getElementById("canvas_area_single")
+    let doubleCanvas = document.getElementById("canvas_area_double")
+
+    switch (mode) {
+        case CanvasMode.Single:
+            singleCanvas.hidden = false
+            doubleCanvas.hidden = true
+            break
+        case CanvasMode.Double:
+            singleCanvas.hidden = true
+            doubleCanvas.hidden = false
+            break
+    }
+}
 
 function main() {
 
@@ -16,11 +33,30 @@ function main() {
         version.style.cursor = "default"
     })
 
-  // ドロップエリア
-  let dropArea = document.getElementById("drop_area")
-  dropArea!!.addEventListener('dragover', (event: DragEvent) => {
-    event.preventDefault();
-  })
+    // ヘッダーアイテム
+    let headerSingle = document.getElementById("canvas_area_header_item_single")
+    headerSingle.addEventListener("mouseover", () => {
+        headerSingle.style.cursor = "pointer"
+    })
+
+    headerSingle.addEventListener("click", () => {
+        changeCanvas(CanvasMode.Single)
+    })
+
+    let headerDouble = document.getElementById("canvas_area_header_item_double")
+    headerDouble.addEventListener("mouseover", () => {
+        headerDouble.style.cursor = "pointer"
+    })
+
+    headerDouble.addEventListener("click", () => {
+        changeCanvas(CanvasMode.Double)
+    })
+
+    // ドロップエリア
+    let dropArea = document.getElementById("drop_area")
+    dropArea!!.addEventListener('dragover', (event: DragEvent) => {
+      event.preventDefault();
+    })
 
   dropArea!!.addEventListener('drop', (event: DragEvent) => {
     event.stopPropagation()

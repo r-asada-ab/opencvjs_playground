@@ -8,6 +8,12 @@ https://opencvjs-playground.azurewebsites.net/
 
 ## Build
 
+### Requirement
+
+Please install mongoDB before build.
+
+### How to Build
+
 Intall packages.
 
 > npm i
