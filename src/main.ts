@@ -42,6 +42,7 @@ function enableDrop(imgElemntId: string) {
       const file = event!!.dataTransfer!!.files[0]
       let url = URL.createObjectURL(file)
       image.src = url
+      image.style.width = "auto"
     })
 }
 
