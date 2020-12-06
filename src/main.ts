@@ -1,7 +1,55 @@
 import * as monaco from "monaco-editor"
+import { CanvasMode } from "./main/CanvasMode"
 const cv = require("./opencv.js")
 
+// キャンバスを切り替える
+function changeCanvas(mode: CanvasMode) {
+    let singleHeader = document.getElementById("canvas_area_header_item_single")
+    let doubleHeader = document.getElementById("canvas_area_header_item_double")
+    let singleCanvas = document.getElementById("canvas_area_single")
+    let doubleCanvas = document.getElementById("canvas_area_double")
+
+    switch (mode) {
+        case CanvasMode.Single:
+            singleHeader.className = "canvas_area_header_item_selected"
+            doubleHeader.className = "canvas_area_header_item"
+            singleCanvas.hidden = false
+            doubleCanvas.hidden = true
+            break
+        case CanvasMode.Double:
+            singleHeader.className = "canvas_area_header_item"
+            doubleHeader.className = "canvas_area_header_item_selected"
+            singleCanvas.hidden = true
+            doubleCanvas.hidden = false
+            break
+    }
+}
+
+// ドロップを有効にする
+function enableDrop(imgElemntId: string) {
+    let image = <HTMLImageElement>document.getElementById(imgElemntId)
+    if (image == null) {
+        return
+    }
+
+    image.addEventListener('dragover', (event: DragEvent) => {
+      event.preventDefault();
+    })
+
+    image.addEventListener('drop', (event: DragEvent) => {
+      event.stopPropagation()
+      event.preventDefault()
+      const file = event!!.dataTransfer!!.files[0]
+      let url = URL.createObjectURL(file)
+      image.src = url
+      image.style.width = "auto" // アスペクト比を維持するように設定
+    })
+}
+
 function main() {
+
+    // 初期化する
+    changeCanvas(CanvasMode.Single)
 
     // タイトル
     let title = document.getElementById("title_text")
@@ -15,21 +63,29 @@ function main() {
         version.style.cursor = "default"
     })
 
-  // ドロップエリア
-  let dropArea = document.getElementById("drop_area")
-  dropArea!!.addEventListener('dragover', (event: DragEvent) => {
-    event.preventDefault();
-  })
+    // ヘッダーアイテム
+    let headerSingle = document.getElementById("canvas_area_header_item_single")
+    headerSingle.addEventListener("mouseover", () => {
+        headerSingle.style.cursor = "pointer"
+    })
 
-  dropArea!!.addEventListener('drop', (event: DragEvent) => {
-    event.stopPropagation()
-    event.preventDefault()
-    const file = event!!.dataTransfer!!.files[0]
-    let url = URL.createObjectURL(file)
+    headerSingle.addEventListener("click", () => {
+        changeCanvas(CanvasMode.Single)
+    })
 
-    let image = <HTMLImageElement>document.getElementById("preview")
-    image.src = url
-  })
+    let headerDouble = document.getElementById("canvas_area_header_item_double")
+    headerDouble.addEventListener("mouseover", () => {
+        headerDouble.style.cursor = "pointer"
+    })
+
+    headerDouble.addEventListener("click", () => {
+        changeCanvas(CanvasMode.Double)
+    })
+
+    // ドロップエリア
+    enableDrop("preview")
+    enableDrop("preview_left")
+    enableDrop("preview_right")
 
   // エディター
   var monacoEditorContainer = document.getElementById("editor");
@@ -46,11 +102,9 @@ function main() {
   // 実行ボタン
   let runButton = document.getElementById("run_button")
   runButton.addEventListener("click", async () => {
-    let v = editor.getValue()
-    console.log(v)
-    let func = new Function("cv", v)
-    console.log(func)
-    func(cv)
+      let v = editor.getValue()
+      let func = new Function("cv", v)
+      func(cv)
   })
 
   // コード検索ボタン

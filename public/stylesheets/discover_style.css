@@ -18,26 +18,26 @@ html {
     flex-direction: column;
   }
   
-  #header {
+#header {
     background-color: #FFC107;
     color: white;
     display: flex;
     flex-direction: row;
-    height: 50px;
-  }
+    height: 45px;
+}
   
-  #title {
+#title {
     flex: 1;
     padding-left: 18px;
-    padding-top: 12px;
+    padding-top: 8px;
     display: flex;
     flex-direction: row;
-  }
+}
   
-  #title_version {
+#title_version {
     margin-top: 2px;
     margin-left: 12px;
-  }
+}
   
   #controller {
     flex: 1;

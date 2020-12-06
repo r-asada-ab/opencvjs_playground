@@ -23,13 +23,13 @@ a {
   color: white;
   display: flex;
   flex-direction: row;
-  height: 50px;
+  height: 45px;
 }
 
 #title {
   flex: 1;
   padding-left: 18px;
-  padding-top: 12px;
+  padding-top: 8px;
   display: flex;
   flex-direction: row;
 }
@@ -46,52 +46,52 @@ a {
 }
 
 #run_button {
-  padding-top: 10px;
+  padding-top: 7px;
   background-color: #FFC107;
   border: none;
   outline: none
 }
 
 #run_button_img {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
 }
 
 #discover_button {
-  padding-top: 10px;
+  padding-top: 7px;
   background-color: #FFC107;
   border: none;
   outline: none
 }
 
 #discover_button_img {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
 }
 
 
 #save_button {
-  padding-top: 10px;
+  padding-top: 7px;
   background-color: #FFC107;
   border: none;
   outline: none
 }
 
 #save_button_img {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
 }
 
 #documentation_button {
-  padding-top: 10px;
+  padding-top: 7px;
   background-color: #FFC107;
   border: none;
   outline: none
 }
 
 #documentation_button_img {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
 }
 
 #container {
@@ -110,6 +110,7 @@ a {
   overflow: hidden;
 }
 
+/* キャンバス領域 */
 #canvas_area {
   border-top: whitesmoke 2px solid;
   border-right: whitesmoke 2px solid;
@@ -119,14 +120,42 @@ a {
   text-align: center;
 }
 
-#drop_area {
+/* キャンバスヘッダー */
+.canvas_area_header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: lightgray 1px solid;
+}
+
+.canvas_area_header_item {
+  font-size: smaller;
+  color: lightgray;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 11px;
+}
+
+.canvas_area_header_item_selected {
+  font-size: smaller;
+  color: dimgray;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  border-bottom: #00B7FF solid 3px;
+}
+
+.drop_area {
   background-color: #e7e7e7;
-  border:dashed 1px lightslategray;
   margin-top: 12px;
   margin-left: 12px;
   margin-right: 12px;
-  padding-bottom: 12px;
   font-size: small;
+}
+
+.preview_area {
+  display: flex;
 }
 
 #preview {
@@ -134,6 +163,32 @@ a {
   height: 400px;
   margin: 10px;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.preview_area_left {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+.preview_area_right {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  flex: 1;
+}
+
+#preview_left {
+  width: 300px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#preview_right {
+  width: 300px;
+  height: 200px;
   margin-left: auto;
   margin-right: auto;
 }
