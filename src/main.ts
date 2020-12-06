@@ -4,15 +4,21 @@ const cv = require("./opencv.js")
 
 // キャンバスを切り替える
 function changeCanvas(mode: CanvasMode) {
+    let singleHeader = document.getElementById("canvas_area_header_item_single")
+    let doubleHeader = document.getElementById("canvas_area_header_item_double")
     let singleCanvas = document.getElementById("canvas_area_single")
     let doubleCanvas = document.getElementById("canvas_area_double")
 
     switch (mode) {
         case CanvasMode.Single:
+            singleHeader.className = "canvas_area_header_item_selected"
+            doubleHeader.className = "canvas_area_header_item"
             singleCanvas.hidden = false
             doubleCanvas.hidden = true
             break
         case CanvasMode.Double:
+            singleHeader.className = "canvas_area_header_item"
+            doubleHeader.className = "canvas_area_header_item_selected"
             singleCanvas.hidden = true
             doubleCanvas.hidden = false
             break
@@ -40,6 +46,8 @@ function enableDrop(imgElemntId: string) {
 }
 
 function main() {
+
+    changeCanvas(CanvasMode.Single)
 
     // タイトル
     let title = document.getElementById("title_text")
