@@ -57,6 +57,18 @@ a {
   height: 32px;
 }
 
+#reset_button {
+  padding-top: 7px;
+  background-color: #FFC107;
+  border: none;
+  outline: none
+}
+
+#reset_button_img {
+  width: 32px;
+  height: 32px;
+}
+
 #discover_button {
   padding-top: 7px;
   background-color: #FFC107;
