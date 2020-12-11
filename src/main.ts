@@ -99,13 +99,19 @@ function main() {
       });
   }
 
-  // 実行ボタン
-  let runButton = document.getElementById("run_button")
-  runButton.addEventListener("click", async () => {
-      let v = editor.getValue()
-      let func = new Function("cv", v)
-      func(cv)
-  })
+    // 実行ボタン
+    let runButton = document.getElementById("run_button")
+    runButton.addEventListener("click", async () => {
+        let v = editor.getValue()
+        let func = new Function("cv", v)
+        func(cv)
+    })
+
+    // リセットボタン
+    let resetButton = document.getElementById("reset_button")
+    resetButton.addEventListener("click", () => {
+        editor.setValue('console.log("Hello, world")')
+    })
 
   // コード検索ボタン
   let discoverButton = document.getElementById("discover_button")

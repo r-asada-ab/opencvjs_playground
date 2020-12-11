@@ -22,12 +22,15 @@
       <div id="header">
         <div id="title">
           <h5 id="title_text">OpenCV.js Playground</h5>
-          <div id="title_version">1.3.0</div>
+          <div id="title_version">1.4.0</div>
         </div>
 
         <div id="controller">
           <button id="run_button">
             <img src="./images/ic_play.png" id="run_button_img">
+          </button>
+          <button id="reset_button">
+            <img src="./images/ic_reset.png" id="reset_button_img">
           </button>
           <button id="discover_button">
             <img src="./images/ic_discover.png" id="discover_button_img">
@@ -107,6 +110,10 @@
 
       tippy('#run_button', {
         content: 'Run',
+      });
+
+      tippy('#reset_button', {
+        content: 'Reset',
       });
 
       tippy('#discover_button', {
