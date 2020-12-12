@@ -67,6 +67,11 @@ export class PlaygroundCanvas {
                     // 再生する
                     let video = <HTMLVideoElement>document.getElementById("preview_video")
                     video.srcObject = stream
+
+                    video.addEventListener("loadedmetadata", () => {
+                        video.setAttribute("width", video.videoWidth.toString());
+                        video.setAttribute("height", video.videoHeight.toString());
+                    })
                     video.play()
 
                     this.stream = stream

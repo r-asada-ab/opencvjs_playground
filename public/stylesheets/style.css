@@ -213,6 +213,8 @@ a {
   color: whitesmoke;
   border-radius: 5%;
   margin: 10px;
+  font-weight: bold;
+  border: lightgray 1px solid;
 }
 
 .video_stop_button {
@@ -223,6 +225,8 @@ a {
   color: whitesmoke;
   border-radius: 5%;
   margin: 10px;
+  font-weight: bold;
+  border: lightgray 1px solid;
 }
 
 /* 保存モーダル */

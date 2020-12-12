@@ -83,6 +83,7 @@
                 <video class="drop_area" id="preview_video"><video>
               </div>
               <div class="video_start_button" id="video_start_button">Start</div>
+              <canvas id="output_canvas_video"></canvas>
             </div>
       </div>
     </div>
@@ -157,6 +158,10 @@
 
       tippy('#output_canvas_double', {
         content: 'Id: output_canvas_double',
+      });
+
+      tippy('#output_canvas_video', {
+        content: 'Id: output_canvas_video',
       });
 
       tippy('#canvas_area_header_item_single', {
