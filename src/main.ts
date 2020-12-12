@@ -1,5 +1,6 @@
 import * as monaco from "monaco-editor"
 import { PlaygroundCanvas } from "./main/PlaygroundCanvas"
+import NotificationModal from "./NotificationModal"
 const cv = require("./opencv.js")
 
 // プレイグラウンドキャンバス
@@ -45,17 +46,17 @@ function main() {
     enableDrop("preview_left")
     enableDrop("preview_right")
 
-  // エディター
-  var monacoEditorContainer = document.getElementById("editor");
-  let editor: monaco.editor.IStandaloneCodeEditor
-  if (monacoEditorContainer) {
-      monaco.editor.setTheme("vs-dark")
-      editor = monaco.editor.create(monacoEditorContainer, {
-          value: 'console.log("Hello, world")',
-          language: 'javascript',
-          automaticLayout: true
-      });
-  }
+    // エディター
+    var monacoEditorContainer = document.getElementById("editor");
+    let editor: monaco.editor.IStandaloneCodeEditor
+    if (monacoEditorContainer) {
+        monaco.editor.setTheme("vs-dark")
+        editor = monaco.editor.create(monacoEditorContainer, {
+            value: 'console.log("Hello, world")',
+            language: 'javascript',
+            automaticLayout: true
+        });
+    }
 
     // 実行ボタン
     let runButton = document.getElementById("run_button")
@@ -114,14 +115,8 @@ function main() {
         var modal = document.getElementById('save_modal');
         modal.style.display = 'none';
 
-        promise.then(() => {
-            // 保存が完了したとき
-            var nModal = document.getElementById('notification_modal')
-            nModal.style.display = 'block'
-
-            nModal.onclick = () => {
-                nModal.style.display = 'none'
-            }
+        promise.then(() => { // 保存が完了したとき
+            NotificationModal.show()
         })
       })
 
@@ -142,13 +137,13 @@ function main() {
           console.log(body)
           let b = body[0]
           editor.setValue(b.snipet)
-    })
-  }
+        })
+    }
 
-  let documentButton = document.getElementById("documentation_button")
-  documentButton.addEventListener("click", () => {
-    window.location.href = "../documentation.html"
-  })
+    let documentButton = document.getElementById("documentation_button")
+    documentButton.addEventListener("click", () => {
+        window.location.href = "../documentation.html"
+    })
 }
 
 main()

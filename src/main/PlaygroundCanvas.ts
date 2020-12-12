@@ -16,9 +16,13 @@ export class PlaygroundCanvas {
     // キャンバス(ビデオ)
     private videoCanvas = document.getElementById("canvas_area_video")
 
+    // ストリーム
+    private stream: MediaStream | null = null
+
     // コンストラクタ
     constructor() {
         this.initHeader()
+        this.initCanvas()
         this.changeCanvas(CanvasMode.Single)
     }
 
@@ -30,6 +34,7 @@ export class PlaygroundCanvas {
     
         headerSingle.addEventListener("click", () => {
             this.changeCanvas(CanvasMode.Single)
+            this.stopVideo()
         })
     
         let headerDouble = document.getElementById("canvas_area_header_item_double")
@@ -39,6 +44,7 @@ export class PlaygroundCanvas {
     
         headerDouble.addEventListener("click", () => {
             this.changeCanvas(CanvasMode.Double)
+            this.stopVideo()
         })
     
         let headerVideo = document.getElementById("canvas_area_header_item_video")
@@ -48,15 +54,50 @@ export class PlaygroundCanvas {
     
         headerVideo.addEventListener("click", () => {
             this.changeCanvas(CanvasMode.Video)
-            let video = <HTMLVideoElement>document.getElementById("preview_video")
-            let con = { video: true, audio: false }
-            navigator.mediaDevices.getUserMedia(con).then( (stream) =>  {
-                video.srcObject = stream
-                video.play()
-            }).catch(function(err) {
-                console.log("An error occurred! " + err);
-            });
         })
+    }
+
+    private initCanvas() {
+        let videoButton = document.getElementById("video_start_button")
+        videoButton.addEventListener("click", () => {
+            if (this.stream == null) { // ストリーミング中か
+                let con = { video: true, audio: false }
+                navigator.mediaDevices.getUserMedia(con).then( (stream) =>  {
+                    
+                    // 再生する
+                    let video = <HTMLVideoElement>document.getElementById("preview_video")
+                    video.srcObject = stream
+                    video.play()
+
+                    this.stream = stream
+
+                    // ビデオボタンのスタイルを変更
+                    videoButton.className = "video_stop_button"
+                    videoButton.textContent = "Stop"
+
+                }).catch(function(err) {
+                    console.log("An error occurred! " + err);
+                })
+            } else {
+                this.stopVideo()
+            }
+        })
+
+        videoButton.addEventListener("mouseover", () => {
+            videoButton.style.cursor = "pointer"
+        })
+    }
+
+    private stopVideo() {
+        this.stream.getTracks().forEach(track => {
+            track.stop()
+        });
+        this.stream = null
+
+        // ビデオボタンのスタイルを変更
+        let videoButton = document.getElementById("video_start_button")
+        videoButton.className = "video_start_button"
+        videoButton.textContent = "Start"
     }
 
     // キャンバスを変更する
