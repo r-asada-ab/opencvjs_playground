@@ -40,7 +40,12 @@ function createTable(body) {
         let upvote = document.createElement("div")
         upvote.style.fontSize = "small"
         upvote.style.color = "lightgray"
-        upvote.innerText = "0"
+        let vo = b.vote
+        if (vo == null) {
+            upvote.innerText = "0"
+        } else {
+            upvote.innerText = vo
+        }
 
         vote.append(upvoteIcon)
         vote.append(upvote)
@@ -52,34 +57,76 @@ function createTable(body) {
         tr.append(date)
         tr.append(views)
 
-        tr.addEventListener("click", () => {
+        addVoteEvent(upvoteIcon, upvote, vo, b._id)
 
-            let dv = 1
-            if (v != null) {
-                dv = v + 1
-            }
-
-            const data = {
-                _id: b._id,
-                views: dv
-            };
-          
-              let body = JSON.stringify(data);
-          
-            fetch('./api/views', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body })
-
-            location.href = "index.html?id=" + encodeURIComponent(b._id)
-        })
-
-        tr.addEventListener("mouseover", () => {
-            tr.style.cursor = "pointer"
-        })
+        addTransitionEvent(title, v, b._id)
+        addTransitionEvent(discription, v, b._id)
+        addTransitionEvent(snipet, v, b._id)
+        addTransitionEvent(date, v, b._id)
+        addTransitionEvent(views, v, b._id)
 
         tBody.append(tr)
     }
+}
+
+// 遷移イベントを追加
+function addTransitionEvent(elm: HTMLElement, v: number | undefined, _id: string) {
+    elm.addEventListener("click", () => {
+
+        let dv = 1
+        if (v != undefined) {
+            dv = v + 1
+        }
+
+        const data = {
+            _id: _id,
+            views: dv
+        };
+      
+          let body = JSON.stringify(data);
+      
+        fetch('./api/views', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body })
+
+        location.href = "index.html?id=" + encodeURIComponent(_id)
+    })
+
+    elm.addEventListener("mouseover", () => {
+        elm.style.cursor = "pointer"
+    })
+}
+
+// Voteイベントを追加
+function addVoteEvent(elm: HTMLElement, textElm: HTMLElement, vote: number | undefined, _id: string) {
+    elm.addEventListener("click", () => {
+
+        let dv = 1
+        if (vote != undefined) {
+            dv = vote + 1
+        }
+
+        const data = {
+            _id: _id,
+            vote: dv
+        };
+      
+        let body = JSON.stringify(data);
+      
+        let promise = fetch('./api/vote', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body })
+        
+        promise.then(() => {
+            textElm.innerText = dv.toString()
+        })
+    })
+
+    elm.addEventListener("mouseover", () => {
+        elm.style.cursor = "pointer"
+    })
 }
 
 function main() {
