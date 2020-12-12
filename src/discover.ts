@@ -12,10 +12,12 @@ function createTable(body) {
     for (let i = 0; i < body.length; i++) {
         let b = body[i]
         let tr = document.createElement("tr")
+        let vote = document.createElement("td")
         let title = document.createElement("td")
         let discription = document.createElement("td")
         let snipet = document.createElement("td")
         let date = document.createElement("td")
+        let views = document.createElement("td")
 
         title.innerText = b.title
         discription.innerText = b.discription
@@ -24,13 +26,56 @@ function createTable(body) {
         let d = new Date(b.date)
         date.innerText = d.toDateString()
 
+        let v = b.views
+        if (v == null) {
+            views.innerText = "0"
+        } else {
+            views.innerText = v
+        }
+
+        let upvoteIcon = new Image()
+        upvoteIcon.src = "images/ic_vote.png"
+        upvoteIcon.width = 16
+        upvoteIcon.height = 16
+        let upvote = document.createElement("div")
+        upvote.style.fontSize = "small"
+        upvote.style.color = "lightgray"
+        upvote.innerText = "0"
+
+        vote.append(upvoteIcon)
+        vote.append(upvote)
+
+        tr.append(vote)
         tr.append(title)
         tr.append(discription)
         tr.append(snipet)
         tr.append(date)
+        tr.append(views)
 
         tr.addEventListener("click", () => {
+
+            let dv = 1
+            if (v != null) {
+                dv = v + 1
+            }
+
+            const data = {
+                _id: b._id,
+                views: dv
+            };
+          
+              let body = JSON.stringify(data);
+          
+            fetch('./api/views', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body })
+
             location.href = "index.html?id=" + encodeURIComponent(b._id)
+        })
+
+        tr.addEventListener("mouseover", () => {
+            tr.style.cursor = "pointer"
         })
 
         tBody.append(tr)
