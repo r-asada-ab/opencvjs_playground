@@ -205,6 +205,30 @@ a {
   margin-right: auto;
 }
 
+.video_start_button {
+  background-color: #00b7ff;
+  width: 64px;
+  height: 32px;
+  line-height: 32px;
+  color: whitesmoke;
+  border-radius: 5%;
+  margin: 10px;
+  font-weight: bold;
+  border: lightgray 1px solid;
+}
+
+.video_stop_button {
+  background-color: #ff4400;
+  width: 64px;
+  height: 32px;
+  line-height: 32px;
+  color: whitesmoke;
+  border-radius: 5%;
+  margin: 10px;
+  font-weight: bold;
+  border: lightgray 1px solid;
+}
+
 /* 保存モーダル */
 .save_modal {
   display: none;

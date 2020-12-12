@@ -10,6 +10,8 @@ var usersRouter = require('./routes/users');
 var registerRouter = require('./routes/api/register');
 var findRouter = require('./routes/api/find');
 var findByIdRouter = require('./routes/api/findbyid');
+var viewsRouter = require('./routes/api/views');
+var voteRouter = require('./routes/api/vote');
 
 require('dotenv').config()
 
@@ -38,10 +40,13 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/users', usersRouter);
+// API
+app.use('/users', usersRouter)
 app.use('/api/register', registerRouter)
 app.use('/api/find', findRouter)
 app.use('/api/findbyid', findByIdRouter)
+app.use('/api/views', viewsRouter)
+app.use('/api/vote', voteRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

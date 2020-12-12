@@ -1,4 +1,5 @@
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const path = require('path');
 
 var main = {
     mode: 'development',
@@ -27,17 +28,16 @@ var main = {
       extensions: [
         '.ts', '.js',
       ],
-    },
-    plugins: [
-      new MonacoWebpackPlugin()
-    ],
-    resolve: {
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
       fallback: {
         crypto: false, 
         fs: false,
         path: false
       }
-    }
+    },
+    plugins: [
+      new MonacoWebpackPlugin()
+    ]
 };
 
 var discover = {
