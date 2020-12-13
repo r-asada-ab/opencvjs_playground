@@ -17,24 +17,38 @@
 
       <!-- ヘッダー -->
       <div id="header">
-        <div id="title">
-          <h5 id="title_text">OpenCV.js Playground</h5>
-          <div id="title_version">1.5.0</div>
+        <div class="header_left">
+          <!-- タイトル -->  
+          <div id="title">
+            <div id="title_text">OpenCV.js Playground</div>
+            <div id="title_version">1.5.0</div>
+          </div>
+
+          <!-- コントローラー(実行関係) -->
+          <div class="controller_execute">
+            <button class="execute_button" id="run_button">
+              <img src="./images/ic_play.png" class="execute_button_img" id="run_button_img">
+              <span class="execute_button_text" id="run_button_text">Run</span>
+            </button>
+  
+            <button class="execute_button" id="reset_button">
+              <img src="./images/ic_reset.png" class="execute_button_img" id="reset_button_img">
+              <span class="execute_button_text" id="run_button_text">Reset</span>
+            </button>
+  
+            <button class="execute_button" id="save_button">
+              <img src="./images/ic_save.png" class="execute_button_img" id="save_button_img">
+              <span class="execute_button_text" id="run_button_text">Save</span>
+            </button>
+          </div>
+
         </div>
 
         <div id="controller">
-          <button id="run_button">
-            <img src="./images/ic_play.png" id="run_button_img">
-          </button>
-          <button id="reset_button">
-            <img src="./images/ic_reset.png" id="reset_button_img">
-          </button>
           <button id="discover_button">
             <img src="./images/ic_discover.png" id="discover_button_img">
           </button>
-          <button id="save_button">
-            <img src="./images/ic_save.png" id="save_button_img">
-          </button>
+
           <button id="documentation_button">
             <img src="./images/ic_documentation.png" id="documentation_button_img">
           </button>
@@ -114,22 +128,10 @@
     </div>
 
     <script>
-
-      tippy('#run_button', {
-        content: 'Run',
-      });
-
-      tippy('#reset_button', {
-        content: 'Reset',
-      });
-
       tippy('#discover_button', {
         content: 'Discover',
       });
 
-      tippy('#save_button', {
-        content: 'Save',
-      });
 
       tippy('#documentation_button', {
         content: 'Documentation',

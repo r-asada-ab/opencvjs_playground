@@ -20,24 +20,61 @@ a {
 
 #header {
   background-color: #FFC107;
-  color: white;
   display: flex;
   flex-direction: row;
   height: 45px;
 }
 
-#title {
+.header_left {
   flex: 1;
-  padding-left: 18px;
-  padding-top: 8px;
   display: flex;
-  flex-direction: row;
+}
+
+/* タイトル */
+#title {
+  width: 180px;
+  padding-left: 8px;
+  padding-top: 2px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(49, 49, 49);
+  color: whitesmoke;
+}
+
+#title_text {
+  font-size: 15px;
+  font-weight: bolder;
 }
 
 #title_version {
+  font-size: x-small;
   margin-top: 2px;
-  margin-left: 12px;
+  text-align: right;
+  margin-right: 6px;
 }
+
+/* ボタン類(実行ボタン) */
+.controller_execute {
+  flex: 1;
+  text-align: right;
+}
+
+.execute_button {
+  height: 100%;
+  background-color: #FFC107;
+  border: none;
+  outline: none;
+}
+
+.execute_button_img {
+  width: 24px;
+  height: 24px;
+}
+
+.execute_button_text {
+  font-size: smaller;
+}
+
 
 #controller {
   flex: 1;
@@ -45,65 +82,28 @@ a {
   margin-right: 30px;
 }
 
-#run_button {
-  padding-top: 7px;
-  background-color: #FFC107;
-  border: none;
-  outline: none
-}
-
-#run_button_img {
-  width: 32px;
-  height: 32px;
-}
-
-#reset_button {
-  padding-top: 7px;
-  background-color: #FFC107;
-  border: none;
-  outline: none
-}
-
-#reset_button_img {
-  width: 32px;
-  height: 32px;
-}
-
 #discover_button {
-  padding-top: 7px;
+  height: 100%;
   background-color: #FFC107;
   border: none;
   outline: none
 }
 
 #discover_button_img {
-  width: 32px;
-  height: 32px;
-}
-
-
-#save_button {
-  padding-top: 7px;
-  background-color: #FFC107;
-  border: none;
-  outline: none
-}
-
-#save_button_img {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
 }
 
 #documentation_button {
-  padding-top: 7px;
+  height: 100%;
   background-color: #FFC107;
   border: none;
   outline: none
 }
 
 #documentation_button_img {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
 }
 
 #container {
