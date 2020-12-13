@@ -56,7 +56,8 @@ a {
 /* ボタン類(実行ボタン) */
 .controller_execute {
   flex: 1;
-  text-align: right;
+  text-align: left;
+  padding-left: 20px;
 }
 
 .execute_button {
