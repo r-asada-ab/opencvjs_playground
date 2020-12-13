@@ -2,7 +2,7 @@ const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const path = require('path');
 
 var main = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/main.ts',
     output: {
         path: `${__dirname}/public/javascripts`,
@@ -41,7 +41,7 @@ var main = {
 };
 
 var discover = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/discover.ts',
   output: {
       path: `${__dirname}/public/javascripts`,

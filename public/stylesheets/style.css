@@ -9,7 +9,7 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
 }
 
 #contents {
@@ -19,24 +19,61 @@ a {
 }
 
 #header {
-  background-color: #FFC107;
-  color: white;
+  background-color: #ffc107;
   display: flex;
   flex-direction: row;
   height: 45px;
 }
 
-#title {
+.header_left {
   flex: 1;
-  padding-left: 18px;
-  padding-top: 8px;
   display: flex;
-  flex-direction: row;
+}
+
+/* タイトル */
+#title {
+  width: 180px;
+  padding-left: 8px;
+  padding-top: 2px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(49, 49, 49);
+  color: whitesmoke;
+}
+
+#title_text {
+  font-size: 15px;
+  font-weight: bolder;
 }
 
 #title_version {
+  font-size: x-small;
   margin-top: 2px;
-  margin-left: 12px;
+  text-align: right;
+  margin-right: 6px;
+}
+
+/* ボタン類(実行ボタン) */
+.controller_execute {
+  flex: 1;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.execute_button {
+  height: 100%;
+  background-color: #ffc107;
+  border: none;
+  outline: none;
+}
+
+.execute_button_img {
+  width: 24px;
+  height: 24px;
+}
+
+.execute_button_text {
+  font-size: smaller;
 }
 
 #controller {
@@ -45,65 +82,28 @@ a {
   margin-right: 30px;
 }
 
-#run_button {
-  padding-top: 7px;
-  background-color: #FFC107;
-  border: none;
-  outline: none
-}
-
-#run_button_img {
-  width: 32px;
-  height: 32px;
-}
-
-#reset_button {
-  padding-top: 7px;
-  background-color: #FFC107;
-  border: none;
-  outline: none
-}
-
-#reset_button_img {
-  width: 32px;
-  height: 32px;
-}
-
 #discover_button {
-  padding-top: 7px;
-  background-color: #FFC107;
+  height: 100%;
+  background-color: #ffc107;
   border: none;
-  outline: none
+  outline: none;
 }
 
 #discover_button_img {
-  width: 32px;
-  height: 32px;
-}
-
-
-#save_button {
-  padding-top: 7px;
-  background-color: #FFC107;
-  border: none;
-  outline: none
-}
-
-#save_button_img {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
 }
 
 #documentation_button {
-  padding-top: 7px;
-  background-color: #FFC107;
+  height: 100%;
+  background-color: #ffc107;
   border: none;
-  outline: none
+  outline: none;
 }
 
 #documentation_button_img {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
 }
 
 #container {
@@ -155,7 +155,7 @@ a {
   padding-left: 8px;
   padding-right: 8px;
   padding-bottom: 8px;
-  border-bottom: #00B7FF solid 3px;
+  border-bottom: #00b7ff solid 3px;
 }
 
 .drop_area {
@@ -205,6 +205,20 @@ a {
   margin-right: auto;
 }
 
+#preview_video {
+  width: 600px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#output_canvas_video {
+  width: 600px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .video_start_button {
   background-color: #00b7ff;
   width: 64px;
@@ -239,10 +253,10 @@ a {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
-  
-.modal_content{
+
+.modal_content {
   background-color: white;
   width: 500px;
   margin: 20% auto;
@@ -287,7 +301,7 @@ a {
   width: 300px;
   overflow: hidden;
   border-radius: 3%;
-  background-color:#21bf73;
+  background-color: #21bf73;
   color: white;
   font-size: large;
   line-height: 65px;

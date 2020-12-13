@@ -72,18 +72,19 @@ function main() {
         editor.setValue('console.log("Hello, world")')
     })
 
-    // コード検索ボタン
-    let discoverButton = document.getElementById("discover_button")
-    discoverButton.addEventListener("click", () => {
-        window.location.href = "../discover.html"
-    })
-
     // 保存ボタン
     let saveButton = document.getElementById("save_button")
     saveButton.addEventListener("click", () => {
         var modal = document.getElementById('save_modal');
         modal.style.display = 'block';
     })
+
+    // コード検索ボタン
+    let discoverButton = document.getElementById("discover_button")
+    discoverButton.addEventListener("click", () => {
+        window.location.href = "../discover.html"
+    })
+
 
     // キャンセルボタン
     var cancelButton = document.getElementById('cancel_button');
