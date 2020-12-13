@@ -1,78 +1,87 @@
 <!DOCTYPE html>
-  <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>OpenCV.js Playground</title>
-    <link rel="stylesheet" href="./stylesheets/documentation_style.css">
 
-    <!-- BootStrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <!-- tippy -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-  </head>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OpenCV.js Playground</title>
+  <link rel="stylesheet" href="./stylesheets/documentation_style.css">
 
-  <body>
+  <!-- BootStrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
 
-    <div id="contents">
-      <!-- ヘッダー -->
-      <div id="header">
+<body>
+
+  <div id="contents">
+    <!-- ヘッダー -->
+    <div id="header">
+      <div class="header_left">
+        <!-- タイトル -->
         <div id="title">
-          <h5 id="title_text">OpenCV.js Playground</h5>
+          <div id="title_text">OpenCV.js Playground</div>
           <div id="title_version">1.5.0</div>
         </div>
       </div>
-
-      <!-- コンテンツコンテナ -->
-      <div id="container">
-        <!-- ドキュメント -->
-        <div class="document">
-
-          <!-- Enum -->
-          <div class="document_title_header">Enumeration Type</div>
-
-            <div class="document_section">
-                <div class="document_section_title">AdaptiveThresholdTypes</div>
-                <div class="document_section_contents">
-                  <ul class="document_section_enum">
-                    <li>ADAPTIVE_THRESH_GAUSSIAN_C</li>
-                    <li>ADAPTIVE_THRESH_MEAN_C</li>
-                  </ul>
-                  <div class="document_section_links">
-                    <div>Original OpenCV Document: <a href="https://docs.opencv.org/3.4/d7/d1b/group__imgproc__misc.html#ggaa42a3e6ef26247da787bf34030ed772cad0c5199ae8637a6b195062fea4789fa9">AdaptiveThresholdTypes</a></div>
-                    <div>See Also: <a href="https://docs.opencv.org/3.4/d7/d1b/group__imgproc__misc.html#ga72b913f352e4a1b1b397736707afcde3">Adaptive Threshold</a></div>
-                    <div>Playground: <a href="https://opencvjs-playground.azurewebsites.net/index.html?id=5fc38296646e535adc9f051c">5fc38296646e535adc9f051c</a></div>
-                  </div>
-                </div>
-            </div>
-
-          <div class="document_title_header">Classes</div>
-            <div class="document_section">
-              <div class="document_section_title">AKAZE</div>
-              <div class="document_section_contents">
-                <div class="document_section_contents_title">enum</div>
-                <ul class="document_section_enum">
-                  <li>DESCRIPTOR_KAZE_UPRIGHT</li>
-                  <li>DESCRIPTOR_KAZE</li>
-                  <li>DESCRIPTOR_MLDB_UPRIGHT</li>
-                  <li>DESCRIPTOR_MLDB</li>
-                </ul>
-                <div class="document_section_contents_title">Functions</div>
-                <div class="document_section_links">
-                  <div>Original OpenCV Document: <a href="https://docs.opencv.org/3.4/d8/d30/classcv_1_1AKAZE.html">AKAZE</a></div>
-                  <div>Playground: <a href="https://opencvjs-playground.azurewebsites.net/index.html?id=5fccf003cd3606478ddf0b50">5fccf003cd3606478ddf0b50</a></div>
-                </div>
-              </div>
-            </div>
-          
-          <div class="document_title_header">Functions</div>
-        </div>
-      </div>
-
     </div>
 
-    <script src="./javascripts/discover.js"></script>
-  </body>
+    <!-- コンテンツコンテナ -->
+    <div id="container">
+      <!-- ドキュメント -->
+      <div class="document">
+
+        <!-- Enum -->
+        <div class="document_title_header">Enumeration Type</div>
+
+        <div class="document_section">
+          <div class="document_section_title">AdaptiveThresholdTypes</div>
+          <div class="document_section_contents">
+            <ul class="document_section_enum">
+              <li>ADAPTIVE_THRESH_GAUSSIAN_C</li>
+              <li>ADAPTIVE_THRESH_MEAN_C</li>
+            </ul>
+            <div class="document_section_links">
+              <div>Original OpenCV Document: <a
+                  href="https://docs.opencv.org/3.4/d7/d1b/group__imgproc__misc.html#ggaa42a3e6ef26247da787bf34030ed772cad0c5199ae8637a6b195062fea4789fa9">AdaptiveThresholdTypes</a>
+              </div>
+              <div>See Also: <a
+                  href="https://docs.opencv.org/3.4/d7/d1b/group__imgproc__misc.html#ga72b913f352e4a1b1b397736707afcde3">Adaptive
+                  Threshold</a></div>
+              <div>Playground: <a
+                  href="https://opencvjs-playground.azurewebsites.net/index.html?id=5fc38296646e535adc9f051c">5fc38296646e535adc9f051c</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="document_title_header">Classes</div>
+        <div class="document_section">
+          <div class="document_section_title">AKAZE</div>
+          <div class="document_section_contents">
+            <div class="document_section_contents_title">enum</div>
+            <ul class="document_section_enum">
+              <li>DESCRIPTOR_KAZE_UPRIGHT</li>
+              <li>DESCRIPTOR_KAZE</li>
+              <li>DESCRIPTOR_MLDB_UPRIGHT</li>
+              <li>DESCRIPTOR_MLDB</li>
+            </ul>
+            <div class="document_section_contents_title">Functions</div>
+            <div class="document_section_links">
+              <div>Original OpenCV Document: <a
+                  href="https://docs.opencv.org/3.4/d8/d30/classcv_1_1AKAZE.html">AKAZE</a></div>
+              <div>Playground: <a
+                  href="https://opencvjs-playground.azurewebsites.net/index.html?id=5fccf003cd3606478ddf0b50">5fccf003cd3606478ddf0b50</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="document_title_header">Functions</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./javascripts/discover.js"></script>
+</body>
+
 </html>
