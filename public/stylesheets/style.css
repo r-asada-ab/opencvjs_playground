@@ -205,6 +205,20 @@ a {
   margin-right: auto;
 }
 
+#preview_video {
+  width: 600px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#output_canvas_video {
+  width: 600px;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .video_start_button {
   background-color: #00b7ff;
   width: 64px;
