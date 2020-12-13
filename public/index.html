@@ -1,104 +1,106 @@
 <!DOCTYPE html>
-  <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>OpenCV.js Playground</title>
-    <link rel="stylesheet" href="./stylesheets/style.css">
 
-    <!-- BootStrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- tippy -->
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-  </head>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OpenCV.js Playground</title>
+  <link rel="stylesheet" href="./stylesheets/style.css">
 
-  <body>
+  <!-- BootStrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- tippy -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+</head>
 
-    <div id="contents">
+<body>
 
-      <!-- ヘッダー -->
-      <div id="header">
-        <div class="header_left">
-          <!-- タイトル -->  
-          <div id="title">
-            <div id="title_text">OpenCV.js Playground</div>
-            <div id="title_version">1.5.0</div>
-          </div>
+  <div id="contents">
 
-          <!-- コントローラー(実行関係) -->
-          <div class="controller_execute">
-            <button class="execute_button" id="run_button">
-              <img src="./images/ic_play.png" class="execute_button_img" id="run_button_img">
-              <span class="execute_button_text" id="run_button_text">Run</span>
-            </button>
-  
-            <button class="execute_button" id="reset_button">
-              <img src="./images/ic_reset.png" class="execute_button_img" id="reset_button_img">
-              <span class="execute_button_text" id="run_button_text">Reset</span>
-            </button>
-  
-            <button class="execute_button" id="save_button">
-              <img src="./images/ic_save.png" class="execute_button_img" id="save_button_img">
-              <span class="execute_button_text" id="run_button_text">Save</span>
-            </button>
-          </div>
-
+    <!-- ヘッダー -->
+    <div id="header">
+      <div class="header_left">
+        <!-- タイトル -->
+        <div id="title">
+          <div id="title_text">OpenCV.js Playground</div>
+          <div id="title_version">1.5.0</div>
         </div>
 
-        <div id="controller">
-          <button id="discover_button">
-            <img src="./images/ic_discover.png" id="discover_button_img">
+        <!-- コントローラー(実行関係) -->
+        <div class="controller_execute">
+          <button class="execute_button" id="run_button">
+            <img src="./images/ic_play.png" class="execute_button_img" id="run_button_img">
+            <span class="execute_button_text" id="run_button_text">Run</span>
           </button>
 
-          <button id="documentation_button">
-            <img src="./images/ic_documentation.png" id="documentation_button_img">
+          <button class="execute_button" id="reset_button">
+            <img src="./images/ic_reset.png" class="execute_button_img" id="reset_button_img">
+            <span class="execute_button_text" id="run_button_text">Reset</span>
+          </button>
+
+          <button class="execute_button" id="save_button">
+            <img src="./images/ic_save.png" class="execute_button_img" id="save_button_img">
+            <span class="execute_button_text" id="run_button_text">Save</span>
           </button>
         </div>
+
       </div>
 
-      <div id="container">
-        <!-- エディタ -->
-        <div id="editor"></div>
+      <div id="controller">
+        <button id="discover_button">
+          <img src="./images/ic_discover.png" id="discover_button_img">
+        </button>
 
-        <!-- 出力画面 -->
-        <div id="canvas_area">
+        <button id="documentation_button">
+          <img src="./images/ic_documentation.png" id="documentation_button_img">
+        </button>
+      </div>
+    </div>
 
-            <!-- 画面の切り替え -->
-            <div class="canvas_area_header">
-              <div class="canvas_area_header_item" id="canvas_area_header_item_single">Single Image</div>
-              <div class="canvas_area_header_item" id="canvas_area_header_item_double">Double Images</div>
-              <div class="canvas_area_header_item" id="canvas_area_header_item_video">Video</div>
+    <div id="container">
+      <!-- エディタ -->
+      <div id="editor"></div>
+
+      <!-- 出力画面 -->
+      <div id="canvas_area">
+
+        <!-- 画面の切り替え -->
+        <div class="canvas_area_header">
+          <div class="canvas_area_header_item" id="canvas_area_header_item_single">Single Image</div>
+          <div class="canvas_area_header_item" id="canvas_area_header_item_double">Double Images</div>
+          <div class="canvas_area_header_item" id="canvas_area_header_item_video">Video</div>
+        </div>
+
+        <!-- 1枚数を確認するための領域 -->
+        <div class="canvas_area_single" id="canvas_area_single">
+          <div class="preview_area">
+            <img class="drop_area" id="preview"></img>
+          </div>
+          <canvas id="output_canvas"></canvas>
+        </div>
+
+
+        <!-- 2枚の画像を確認するための領域 -->
+        <div class="canvas_area_double" id="canvas_area_double" hidden>
+          <div class="preview_area">
+            <div class="preview_area_left">
+              <img class="drop_area" id="preview_left"></img>
             </div>
-
-            <!-- 1枚数を確認するための領域 -->
-            <div class="canvas_area_single" id="canvas_area_single">
-              <div class="preview_area">
-                <img class="drop_area" id="preview"></img>
-              </div>
-              <canvas id="output_canvas"></canvas>
+            <div class="preview_area_right">
+              <img class="drop_area" id="preview_right"></img>
             </div>
+          </div>
+          <canvas id="output_canvas_double"></canvas>
+        </div>
 
-
-            <!-- 2枚の画像を確認するための領域 -->
-            <div class="canvas_area_double" id="canvas_area_double" hidden>
-              <div class="preview_area">
-                <div class="preview_area_left">
-                  <img class="drop_area" id="preview_left"></img>
-                </div>
-                <div class="preview_area_right">
-                  <img class="drop_area" id="preview_right"></img>
-                </div>
-              </div>
-              <canvas id="output_canvas_double"></canvas>
-            </div>
-
-            <!-- ビデオ入力を確認するための領域 -->
-            <div class="canvas_area_video"  id="canvas_area_video" hidden>
-              <div class="preview_area">
-                <video class="drop_area" id="preview_video"><video>
-              </div>
-              <div class="video_start_button" id="video_start_button">Start</div>
-              <canvas id="output_canvas_video"></canvas>
-            </div>
+        <!-- ビデオ入力を確認するための領域 -->
+        <div class="canvas_area_video" id="canvas_area_video" hidden>
+          <div class="preview_area">
+            <video class="drop_area" id="preview_video"><video>
+          </div>
+          <div class="video_start_button" id="video_start_button">Start</div>
+          <canvas id="output_canvas_video"></canvas>
+        </div>
       </div>
     </div>
 
@@ -107,21 +109,21 @@
       <div class="modal_content">
         <div class="modal_body">
           <div class="modal_subtitle">Title</div>
-          <input class="modal_input" id="title_textbox" type="text"/>
-          <div  class="modal_subtitle">Dipscription</div>
-          <input class="modal_input" id="discription_textbox" type="text"/>
+          <input class="modal_input" id="title_textbox" type="text" />
+          <div class="modal_subtitle">Dipscription</div>
+          <input class="modal_input" id="discription_textbox" type="text" />
 
           <div class="modal_button_container">
             <input type="button" class="modal_button" id="register_button" value="register">
-            <input type="button"class="modal_button" id="cancel_button" value="cancel">
+            <input type="button" class="modal_button" id="cancel_button" value="cancel">
           </div>
-      </div>
+        </div>
       </div>
     </div>
 
     <!-- 通知モーダルウィンドウ -->
     <div id="notification_modal" class="notification_modal">
-      <div id="notification_modal_message">      
+      <div id="notification_modal_message">
         <img src="./images/ic_success.png" id="success_button_img">
         Saved successfully!
       </div>
@@ -177,5 +179,6 @@
     </script>
 
     <script src="./javascripts/main.js"></script>
-  </body>
+</body>
+
 </html>
