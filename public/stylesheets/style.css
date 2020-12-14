@@ -308,6 +308,21 @@ a {
   padding-left: 10px;
 }
 
+.notification_modal_error {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  right: 3%;
+  bottom: 3%;
+  width: 300px;
+  overflow: hidden;
+  border-radius: 3%;
+  background-color: rgba(228, 29, 29, 0.829);
+  color: white;
+  font-size: smaller;
+  padding: 10px;
+}
+
 #success_button_img {
   width: 32px;
   height: 32px;

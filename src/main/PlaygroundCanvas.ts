@@ -94,10 +94,12 @@ export class PlaygroundCanvas {
     }
 
     private stopVideo() {
-        this.stream.getTracks().forEach(track => {
-            track.stop()
-        });
-        this.stream = null
+        if (this.stream) {
+            this.stream.getTracks().forEach(track => {
+                track.stop()
+            });
+            this.stream = null
+        }
 
         // ビデオボタンのスタイルを変更
         let videoButton = document.getElementById("video_start_button")

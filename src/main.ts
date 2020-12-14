@@ -61,9 +61,21 @@ function main() {
     // 実行ボタン
     let runButton = document.getElementById("run_button")
     runButton.addEventListener("click", async () => {
+
+        NotificationModal.hide()
+
         let v = editor.getValue()
-        let func = new Function("cv", v)
-        func(cv)
+        try {
+            let func = new Function("cv", v)
+            func(cv)
+        } catch(e) {
+            let str = String(e)
+            let array = str.split(/\r\n|\n/)
+            if (array.length > 0) {
+                NotificationModal.setText(array[0])
+                NotificationModal.showError()
+            }
+        }
     })
 
     // リセットボタン
