@@ -112,6 +112,13 @@ a {
   flex: 1;
 }
 
+.coding_area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px whitesmoke solid;
+}
+
 #editor {
   border-top: whitesmoke 2px solid;
   border-right: whitesmoke 2px solid;
@@ -120,6 +127,35 @@ a {
   min-width: 620px;
   resize: horizontal;
   overflow: hidden;
+  flex: 1;
+  margin: 0px;
+}
+
+.console {
+  flex: 0.3;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.console_header {
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color:rgb(214, 214, 214);
+  line-height: 32px;
+}
+
+.console_header_title {
+  font-size: small;
+  margin-left: 4px;
+}
+
+.console_output {
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color:whitesmoke;
+  flex: 1;
+  overflow: scroll;
 }
 
 /* キャンバス領域 */
