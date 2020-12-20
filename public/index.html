@@ -23,7 +23,7 @@
         <!-- タイトル -->
         <div id="title">
           <div id="title_text">OpenCV.js Playground</div>
-          <div id="title_version">1.5.1</div>
+          <div id="title_version">1.6.0</div>
         </div>
 
         <!-- コントローラー(実行関係) -->
@@ -59,7 +59,20 @@
 
     <div id="container">
       <!-- エディタ -->
-      <div id="editor"></div>
+      <div class="coding_area">
+        <div id="editor"></div>
+        <div class="console">
+          <div class="console_header">
+            <div class="console_header_title">Console</div>
+            <div class="console_header_reset">
+              <img src="images/ic_reset_console.png" id="reset_console_img">
+            </div>
+          </div>  
+          <div class="console_output" id="custom_console">
+          </div>
+        </div>
+      </div>
+
 
       <!-- 出力画面 -->
       <div id="canvas_area">

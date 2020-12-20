@@ -3,6 +3,23 @@ import { PlaygroundCanvas } from "./main/PlaygroundCanvas"
 import NotificationModal from "./NotificationModal"
 const cv = require("./opencv.js")
 
+// console.logをオーバーライドする
+function overideCosoleLog() {
+    (function() {
+        let originalLog = console.log
+        let customeConsole = document.getElementById("custom_console")
+        console.log = (message) => {
+            let col = document.createElement("div")
+            col.style.borderBottom = "0.5px solid #d3d3d3"
+            col.style.padding = "4px"
+            col.innerText = message
+            customeConsole.append(col)
+            originalLog.apply(console, arguments)
+        } 
+    })();
+}
+overideCosoleLog()
+
 // プレイグラウンドキャンバス
 let playgroundCanvas = new PlaygroundCanvas()
 
@@ -147,7 +164,6 @@ function main() {
 
           promise.then(async (resolve) => {
           let body = await resolve.json()
-          console.log(body)
           let b = body[0]
           editor.setValue(b.snipet)
         })
@@ -156,6 +172,19 @@ function main() {
     let documentButton = document.getElementById("documentation_button")
     documentButton.addEventListener("click", () => {
         window.location.href = "../documentation.html"
+    })
+
+    // コンソールリセットボタン
+    let consoleResetButton = document.getElementById("reset_console_img")
+    consoleResetButton.addEventListener("mouseover", () => {
+        consoleResetButton.style.cursor = "pointer"
+    })
+
+    consoleResetButton.addEventListener("click", () => {
+        let console = document.getElementById("custom_console")
+        while (console.hasChildNodes()) {
+            console.removeChild(console.lastChild);
+        }
     })
 }
 
