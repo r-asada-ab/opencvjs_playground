@@ -132,7 +132,7 @@ a {
 }
 
 .console {
-  flex: 0.3;
+  height: 220px;
   min-height: 100px;
   display: flex;
   flex-direction: column;
@@ -154,6 +154,10 @@ a {
   margin-left: 2px;
   margin-right: 2px;
   background-color:whitesmoke;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   flex: 1;
   overflow: scroll;
 }

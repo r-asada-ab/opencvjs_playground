@@ -3,6 +3,26 @@ import { PlaygroundCanvas } from "./main/PlaygroundCanvas"
 import NotificationModal from "./NotificationModal"
 const cv = require("./opencv.js")
 
+// console.logをオーバーライドする
+function overideCosoleLog() {
+    (function() {
+        let originalLog = console.log
+        let customeConsole = document.getElementById("custom_console")
+        console.log = (message) => {
+            let origin = customeConsole.innerText
+            let txt = ""
+            if (origin.length == 0) {
+                txt = message
+            } else {
+                txt = origin + "\n" + message
+            }
+            customeConsole.innerText = txt
+            originalLog.apply(console, arguments)
+        } 
+    })();
+}
+overideCosoleLog()
+
 // プレイグラウンドキャンバス
 let playgroundCanvas = new PlaygroundCanvas()
 
@@ -147,7 +167,6 @@ function main() {
 
           promise.then(async (resolve) => {
           let body = await resolve.json()
-          console.log(body)
           let b = body[0]
           editor.setValue(b.snipet)
         })
