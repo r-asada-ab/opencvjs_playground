@@ -9,14 +9,11 @@ function overideCosoleLog() {
         let originalLog = console.log
         let customeConsole = document.getElementById("custom_console")
         console.log = (message) => {
-            let origin = customeConsole.innerText
-            let txt = ""
-            if (origin.length == 0) {
-                txt = message
-            } else {
-                txt = origin + "\n" + message
-            }
-            customeConsole.innerText = txt
+            let col = document.createElement("div")
+            col.style.borderBottom = "0.5px solid #d3d3d3"
+            col.style.padding = "4px"
+            col.innerText = message
+            customeConsole.append(col)
             originalLog.apply(console, arguments)
         } 
     })();
@@ -175,6 +172,19 @@ function main() {
     let documentButton = document.getElementById("documentation_button")
     documentButton.addEventListener("click", () => {
         window.location.href = "../documentation.html"
+    })
+
+    // コンソールリセットボタン
+    let consoleResetButton = document.getElementById("reset_console_img")
+    consoleResetButton.addEventListener("mouseover", () => {
+        consoleResetButton.style.cursor = "pointer"
+    })
+
+    consoleResetButton.addEventListener("click", () => {
+        let console = document.getElementById("custom_console")
+        while (console.hasChildNodes()) {
+            console.removeChild(console.lastChild);
+        }
     })
 }
 
