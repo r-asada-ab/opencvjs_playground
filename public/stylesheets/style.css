@@ -112,6 +112,13 @@ a {
   flex: 1;
 }
 
+.coding_area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px whitesmoke solid;
+}
+
 #editor {
   border-top: whitesmoke 2px solid;
   border-right: whitesmoke 2px solid;
@@ -120,6 +127,49 @@ a {
   min-width: 620px;
   resize: horizontal;
   overflow: hidden;
+  flex: 1;
+  margin: 0px;
+}
+
+.console {
+  height: 220px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.console_header {
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color:rgb(214, 214, 214);
+  line-height: 32px;
+  display: flex;
+}
+
+.console_header_title {
+  font-size: small;
+  margin-left: 4px;
+  flex: 1;
+  font-weight: bold;
+}
+
+#reset_console_img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.console_output {
+  margin-right: 4px;
+  background-color:whitesmoke;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  flex: 1;
+  overflow: scroll;
+  font-size: smaller;
+  color: #535353;
 }
 
 /* キャンバス領域 */
