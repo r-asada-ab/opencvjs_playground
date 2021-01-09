@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Arsenal:400,700,300);
+
 html {
   height: 100%;
 }
@@ -10,6 +12,36 @@ body {
 
 a {
   color: #00b7ff;
+}
+
+.splash {
+  height: 100%;
+  background-color: #ffc107d2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.loader {
+  flex: 1;
+}
+
+.splash_title {
+  height: 32px;
+  font-family: 'Arsenal', cursive;
+  font-size: 23px;
+}
+
+.splash_discription {
+  flex: 1;
+  font-family: 'Arsenal', cursive;
+  font-size: 14px;
+}
+
+svg {
+  width: 100px;
+  height: 100px;
+  margin-top: 24%;
 }
 
 #contents {

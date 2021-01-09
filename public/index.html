@@ -11,11 +11,62 @@
   <!-- tippy -->
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
+  <script> 
+    let t = Date.now()
+  </script>
 </head>
 
 <body>
+    
+  <!-- スプラッシュ -->
+  <div class="splash" id="splash">
+    <div class="loader">
+      <svg version="1.1" x="0px" y="0px" 
+      viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" 
+      preserveAspectRatio="xMaxYMax meet">
 
-  <div id="contents">
+      <rect x="20" y="50" width="4" height="15" fill="#fff">
+        <animateTransform attributeType="xml"
+          attributeName="transform" type="translate"
+          values="0 0; 0 20; 0 0"
+          begin="0" dur="0.6s" repeatCount="indefinite" />
+      </rect>
+
+        <rect x="30" y="50" width="4" height="15" fill="#fff">
+          <animateTransform attributeType="xml"
+            attributeName="transform" type="translate"
+            values="0 0; 0 20; 0 0"
+            begin="0.1" dur="0.6s" repeatCount="indefinite" />
+        </rect>
+
+        <rect x="40" y="50" width="4" height="15" fill="#fff">
+          <animateTransform attributeType="xml"
+            attributeName="transform" type="translate"
+            values="0 0; 0 20; 0 0"
+            begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+        </rect>
+
+        <rect x="50" y="50" width="4" height="15" fill="#fff">
+          <animateTransform attributeType="xml"
+            attributeName="transform" type="translate"
+            values="0 0; 0 20; 0 0"
+            begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+        </rect>
+
+        <rect x="60" y="50" width="4" height="15" fill="#fff">
+          <animateTransform attributeType="xml"
+            attributeName="transform" type="translate"
+            values="0 0; 0 20; 0 0"
+            begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+        </rect>
+
+      </svg>
+    </div>
+    <div class="splash_title">OpenCV.js Playground</div>
+    <div class="splash_discription">This may take several minutes</div>
+  </div>
+
+  <div id="contents" hidden>
 
     <!-- ヘッダー -->
     <div id="header">
@@ -141,8 +192,22 @@
         Saved successfully!
       </div>
     </div>
+  </div>
 
     <script>
+      window.onload = () => {
+        let d = Date.now() - t
+        if (d < 3000) {
+          setTimeout(() => {
+            document.getElementById("splash").hidden = true
+            document.getElementById("contents").hidden = false
+          }, d + 1000)
+        } else {
+          document.getElementById("splash").hidden = true
+          document.getElementById("contents").hidden = false
+        }
+      }
+
       tippy('#discover_button', {
         content: 'Discover',
       });
@@ -188,7 +253,6 @@
       tippy('#canvas_area_header_item_double', {
         content: "Click when processing two images"
       })
-
     </script>
 
     <script src="./javascripts/main.js"></script>
