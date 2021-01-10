@@ -9,8 +9,12 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-  <script defer src="./javascripts/main.js" id="script_main"></script>
-  <script src="https://docs.opencv.org/4.5.1/opencv.js"></script>
+    <!-- tippy -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <script defer src="./javascripts/main.js" id="script_main"></script>
+    <script src="https://docs.opencv.org/4.5.1/opencv.js"></script>
 </head>
 
 <body>
@@ -141,6 +145,54 @@
       </div>
     </div>
   </div>
+
+  <script>
+    tippy('#discover_button', {
+      content: 'Discover',
+    });
+
+
+    tippy('#documentation_button', {
+      content: 'Documentation',
+    });
+
+
+    tippy('#preview', {
+      content: 'Id: preview',
+    });
+
+    tippy('#preview_left', {
+      content: 'Id: preview_left',
+    });
+
+    tippy('#preview_right', {
+      content: 'Id: preview_right',
+    });
+
+    tippy('#preview_video', {
+      content: 'Id: preview_video'
+    })
+
+    tippy('#output_canvas', {
+      content: 'Id: output_canvas',
+    });
+
+    tippy('#output_canvas_double', {
+      content: 'Id: output_canvas_double',
+    });
+
+    tippy('#output_canvas_video', {
+      content: 'Id: output_canvas_video',
+    });
+
+    tippy('#canvas_area_header_item_single', {
+      content: "Click when processing a image"
+    })
+
+    tippy('#canvas_area_header_item_double', {
+      content: "Click when processing two images"
+    })
+  </script>
 </body>
 
 </html>
