@@ -6,7 +6,7 @@ html {
 
 body {
   margin: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Arsenal", Helvetica;
   height: 100%;
 }
 
@@ -14,35 +14,7 @@ a {
   color: #00b7ff;
 }
 
-.splash {
-  height: 100%;
-  background-color: #ffc107d2;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
 
-.loader {
-  flex: 1;
-}
-
-.splash_title {
-  height: 32px;
-  font-family: 'Arsenal', cursive;
-  font-size: 23px;
-}
-
-.splash_discription {
-  flex: 1;
-  font-family: 'Arsenal', cursive;
-  font-size: 14px;
-}
-
-svg {
-  width: 100px;
-  height: 100px;
-  margin-top: 24%;
-}
 
 #contents {
   height: 100%;
@@ -51,7 +23,7 @@ svg {
 }
 
 #header {
-  background-color: #ffc107;
+  background-color: #ffc107d2;
   display: flex;
   flex-direction: row;
   height: 45px;
@@ -94,7 +66,7 @@ svg {
 
 .execute_button {
   height: 100%;
-  background-color: #ffc107;
+  background-color: #ffc10700;
   border: none;
   outline: none;
 }
@@ -116,7 +88,7 @@ svg {
 
 #discover_button {
   height: 100%;
-  background-color: #ffc107;
+  background-color: #ffc10700;
   border: none;
   outline: none;
 }
@@ -128,7 +100,7 @@ svg {
 
 #documentation_button {
   height: 100%;
-  background-color: #ffc107;
+  background-color: #ffc10700;
   border: none;
   outline: none;
 }

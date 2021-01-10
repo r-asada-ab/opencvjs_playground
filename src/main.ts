@@ -1,7 +1,7 @@
 import * as monaco from "monaco-editor"
 import { PlaygroundCanvas } from "./main/PlaygroundCanvas"
 import NotificationModal from "./NotificationModal"
-const cv = require("./opencv.js")
+const cv = require("cv")
 
 // console.logをオーバーライドする
 function overideCosoleLog() {
