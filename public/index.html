@@ -8,16 +8,29 @@
   <!-- BootStrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <!-- tippy -->
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
-  <script> 
+
+  <script>
     let t = Date.now()
+  </script>
+
+  <script async src="./javascripts/main.js" id="script_main"></script>
+  <script src="https://docs.opencv.org/4.5.1/opencv.js"></script>
+
+  <script>
+      var script = document.getElementById('script_main');
+      script.onload = () => {
+        console.log('script loaded');
+        let d = Date.now() - t 
+        setTimeout(() => {
+          document.getElementById("splash").hidden = true
+          document.getElementById("contents").hidden = false
+        }, 3000 - d)
+      }
   </script>
 </head>
 
 <body>
-    
+
   <!-- スプラッシュ -->
   <div class="splash" id="splash">
     <div class="loader">
@@ -118,7 +131,7 @@
             <div class="console_header_reset">
               <img src="images/ic_reset_console.png" id="reset_console_img">
             </div>
-          </div>  
+          </div>
           <div class="console_output" id="custom_console">
           </div>
         </div>
@@ -193,69 +206,6 @@
       </div>
     </div>
   </div>
-
-    <script>
-      window.onload = () => {
-        let d = Date.now() - t
-        if (d < 3000) {
-          setTimeout(() => {
-            document.getElementById("splash").hidden = true
-            document.getElementById("contents").hidden = false
-          }, d + 1000)
-        } else {
-          document.getElementById("splash").hidden = true
-          document.getElementById("contents").hidden = false
-        }
-      }
-
-      tippy('#discover_button', {
-        content: 'Discover',
-      });
-
-
-      tippy('#documentation_button', {
-        content: 'Documentation',
-      });
-
-
-      tippy('#preview', {
-        content: 'Id: preview',
-      });
-
-      tippy('#preview_left', {
-        content: 'Id: preview_left',
-      });
-
-      tippy('#preview_right', {
-        content: 'Id: preview_right',
-      });
-
-      tippy('#preview_video', {
-        content: 'Id: preview_video'
-      })
-
-      tippy('#output_canvas', {
-        content: 'Id: output_canvas',
-      });
-
-      tippy('#output_canvas_double', {
-        content: 'Id: output_canvas_double',
-      });
-
-      tippy('#output_canvas_video', {
-        content: 'Id: output_canvas_video',
-      });
-
-      tippy('#canvas_area_header_item_single', {
-        content: "Click when processing a image"
-      })
-
-      tippy('#canvas_area_header_item_double', {
-        content: "Click when processing two images"
-      })
-    </script>
-
-    <script src="./javascripts/main.js"></script>
 </body>
 
 </html>

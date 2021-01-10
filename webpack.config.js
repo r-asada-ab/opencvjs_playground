@@ -37,7 +37,10 @@ var main = {
     },
     plugins: [
       new MonacoWebpackPlugin()
-    ]
+    ],
+    externals: {
+      cv: 'cv',
+    },
 };
 
 var discover = {
