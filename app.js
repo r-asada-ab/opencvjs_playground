@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var compression = require('compression')
 
 var usersRouter = require('./routes/users');
 var registerRouter = require('./routes/api/register');
@@ -16,6 +17,7 @@ var voteRouter = require('./routes/api/vote');
 require('dotenv').config()
 
 var app = express();
+app.use(compression())
 
 // db
 mongoose.connect("mongodb://"+process.env.COSMOSDB_HOST+":"+process.env.COSMOSDB_PORT+"/"+process.env.COSMOSDB_DBNAME+"?ssl=true&replicaSet=globaldb", {
