@@ -12,9 +12,6 @@
     <!-- tippy -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
-
-    <script defer src="./javascripts/main.js" id="script_main"></script>
-    <script src="https://docs.opencv.org/4.5.1/opencv.js"></script>
 </head>
 
 <body>
@@ -60,7 +57,13 @@
       </div>
     </div>
 
-    <div id="container">
+  <!-- スプラッシュ -->
+  <div class="splash" id="splash">
+    <div class="splash_title">OpenCV.js Playground</div>
+    <div class="splash_discription">This may take several minutes</div>
+  </div>
+
+    <div id="container" hidden>
       <!-- エディタ -->
       <div class="coding_area">
         <div id="editor"></div>
@@ -191,6 +194,14 @@
 
     tippy('#canvas_area_header_item_double', {
       content: "Click when processing two images"
+    })
+  </script>
+
+  <script defer src="./javascripts/main.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      document.getElementById("splash").hidden = true
+      document.getElementById("container").hidden = false
     })
   </script>
 </body>
