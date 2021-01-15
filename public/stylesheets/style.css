@@ -14,7 +14,26 @@ a {
   color: #00b7ff;
 }
 
+.splash {
+  height: 100%;
+  background-color: #ffc107d2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
 
+.splash_title {
+  margin-top: 30%;
+  height: 32px;
+  font-family: 'Arsenal', cursive;
+  font-size: 23px;
+}
+
+.splash_discription {
+  flex: 1;
+  font-family: 'Arsenal', cursive;
+  font-size: 14px;
+}
 
 #contents {
   height: 100%;
@@ -27,6 +46,7 @@ a {
   display: flex;
   flex-direction: row;
   height: 45px;
+  border-bottom: 0.5px solid whitesmoke;
 }
 
 .header_left {
