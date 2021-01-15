@@ -146,6 +146,7 @@ function main() {
         modal.style.display = 'none';
 
         promise.then(() => { // 保存が完了したとき
+            NotificationModal.setText("Saved successfully!")
             NotificationModal.show()
         })
       })
@@ -186,6 +187,12 @@ function main() {
             console.removeChild(console.lastChild);
         }
     })
+
+    window.onbeforeunload = (e) => {
+        if (editor.getValue() != 'console.log("Hello, world")') {
+            e.returnValue = "Some code is not saved. Would you like to leave this page?";
+        }
+    }
 }
 
 main()
